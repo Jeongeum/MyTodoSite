@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My todo Site 📝</title>
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <div class="all">
+        <div class="main">
+            <div id="quote">
+                <span>명언</span> | <span>작가</span>
+            </div>
+            <div id="left">
+                <div class="info">
+                    <h2 class="userName"></h2>
+                    <input type="text" class="userName_input" maxlength="12">
+                    <input type="file" name="profile_img" accept="image/*" class="profile_img">
+                    <figure class="profileImg_btn">
+                        <!-- <img src="img/bros_blank.jpg" alt="기본이미지"> -->
+                    </figure>
+
+                </div>
+                <div class="clock">
+                    <div>0000.00.00</div>
+                    <h3 class="time"></h3>
+
+                </div>
+                <div class="weather">
+                    <img id="weatherImg" src="" alt="">
+                    <p>weather</p>
+                    <p>city</p>
+                </div>
+            </div>
+            <div id="right">
+                <div class="todolistBox">
+                    <ul class="lists">
+                        <!--투두리스트 목록-->
+                    </ul>
+                    <div class="todolist_box hide">
+                        <input required maxlength="25" type="text" placeholder="Enter new Todo">
+
+                    </div>
+                    <button class="add_list">
+                        <i class="todo_btn fa-solid fa-plus"></i>
+                    </button>
+                </div>
+                <canvas id="Canvas" class="canvas hide"></canvas>
+
+            </div>
+            <div id="music"></div>
+        </div>
+        <div id="menuBox">
+            <ul class="menu">
+                <li class="bookmark">북마크</li>
+                <li class="google">구글</li>
+                <li class="naver">네이버</li>
+                <li class="yotube">유튜브</li>
+                <li class="palette">팔레트</li>
+                <li class="save">저장</li>
+                <li class="logout">나가기</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
