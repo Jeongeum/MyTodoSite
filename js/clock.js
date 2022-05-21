@@ -1,7 +1,7 @@
 const calendar = document.querySelector(".clock div:nth-child(1)");
 let weekDay = document.querySelector(".clock div:nth-child(2)");
 const clock = document.querySelector("h3.time");
-console.log(weekDay);
+
 function getClock() {
   const dateDefine = new Date();
   const year = dateDefine.getFullYear();
