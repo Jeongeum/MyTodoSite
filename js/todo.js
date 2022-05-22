@@ -6,8 +6,8 @@ const addBtn = document.querySelector(".todo_btn");
 const TODOLIST_KEY = "TODOLIST_up";
 const BTNSHOW = "btn_show";
 const savedTodos = localStorage.getItem(TODOLIST_KEY);
-const HIDE = "hide";
-const SHOW = "show";
+// const HIDE = "hide";
+// const SHOW = "show";
 let todos = [];
 
 function saveTodos() {
