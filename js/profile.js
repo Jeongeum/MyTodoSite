@@ -4,6 +4,8 @@ const loginInput = document.querySelector(".login input");
 const user = document.querySelector(".userName");
 const usernameInput = document.querySelector(".userName_input");
 
+const logout = document.querySelector(".logout");
+
 const profileBtn = document.querySelector(".profileImg_btn");
 const profileInput = document.querySelector(".profile_img");
 const profileIcon = document.querySelector(".fa-user-plus");
@@ -23,9 +25,6 @@ const fileTypes = [
 
 const NAME_KEY = "Name";
 const PROFILE_IMG = "userImg";
-// const HIDDEN_CLASSNAME = "hidden";
-const HIDE = "hide";
-const SHOW = "show";
 
 /* 이름 변경 */
 function handleUserNameInput() {
@@ -58,7 +57,6 @@ function handleProfileImg() {
   if (profileBtn.children.length > 0) {
     // 프로필 사진이 두개이면 처음 사진을 지운다.
     localStorage.removeItem(PROFILE_IMG);
-    console.log(profileBtn.children[0].src);
     //profileBtn.children[0].remove();
   }
 
@@ -83,7 +81,6 @@ function handleProfileImg() {
 
 function loadImgUrl(DataUrl) {
   img.src = DataUrl;
-  console.log(img.src);
 }
 
 function validFileType(file) {
@@ -113,7 +110,6 @@ const savedName = localStorage.getItem(NAME_KEY);
 
 // 저장된 사진이 없으면 기본이미지 나옴
 if (savedImg !== null) {
-  console.log(savedImg);
   loadImgUrl(savedImg);
 }
 
@@ -125,3 +121,14 @@ if (savedName === null) {
   loginSection.classList.add(HIDE);
   paint(savedName);
 }
+
+// 로그아웃
+function handleLogout() {
+  localStorage.removeItem(NAME_KEY);
+  localStorage.removeItem("D_dayName");
+  localStorage.removeItem("TODOLIST_up");
+  localStorage.removeItem(PROFILE_IMG);
+  document.location.href = "index.html";
+}
+
+logout.addEventListener("click", handleLogout);
