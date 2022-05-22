@@ -12,14 +12,79 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
 
 </head>
 
 <body>
-    <div class="all">
+    <div class="container">
         <div class="main">
-            <div id="quote">
-                <span>명언</span> | <span>작가</span>
+            <div id="dDay">
+                <span>D-DAY</span>
+                <div class="ddayBox hide">
+                    <h3></h3>
+                    <h2></h2>
+                    <p></p>
+                </div>
+                <button class="addDay"><i class="fa-solid fa-plus"></i></button>
+
+                <div class="selectBox hide">
+                    <input type="text" class="dayName"><br>
+                    <select name="Year" id="dDayYear">
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                    </select>년
+                    <select name="Month" id="dDayMonth">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>월
+                    <select name="Day" id="dDayDay">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>일
+                </div>
             </div>
             <div id="left">
                 <div class="info">
@@ -27,23 +92,27 @@
                     <input type="text" class="userName_input" maxlength="12">
                     <input type="file" name="profile_img" accept="image/*" class="profile_img">
                     <figure class="profileImg_btn">
-                        <!-- <img src="img/bros_blank.jpg" alt="기본이미지"> -->
+                        <img src="img/bros_blank.jpg" alt="기본이미지">
                     </figure>
 
                 </div>
                 <div class="clock">
                     <div>0000.00.00</div>
+                    <div></div>
                     <h3 class="time"></h3>
+
 
                 </div>
                 <div class="weather">
                     <img id="weatherImg" src="" alt="">
                     <p>weather</p>
+                    <sub>max/min</sub>
                     <p>city</p>
                 </div>
             </div>
             <div id="right">
                 <div class="todolistBox">
+                    <p>Todo</p>
                     <ul class="lists">
                         <!--투두리스트 목록-->
                     </ul>
@@ -55,23 +124,66 @@
                         <i class="todo_btn fa-solid fa-plus"></i>
                     </button>
                 </div>
-                <canvas id="Canvas" class="canvas hide"></canvas>
+                <div class="canvasBg hide">
+                    <canvas id="jsCanvas" class="canvas hide"></canvas>
 
+                    <div class="controls">
+                        <div class="controls__btns">
+                            <input type="range" id="jsRange" min="0.1" max="5.0" value="2.5" step="0.1">
+                            <button id="jsMode">Fill</button>
+                            <button id="jsClear">Clear</button>
+                            <button id="jsSave">Save</button>
+                        </div>
+                        <div class="controls__colors" id="jsColors">
+                            <div class="controls__color jsColor" style="background-color:#2c2c2c"></div>
+                            <div class="controls__color jsColor" style="background-color:white"></div>
+                            <div class="controls__color jsColor" style="background-color:#FF3B30"></div>
+                            <div class="controls__color jsColor" style="background-color:#FF9500"></div>
+                            <div class="controls__color jsColor" style="background-color:#FFCC00"></div>
+
+                            <div class="controls__color jsColor" style="background-color:#4CD963"></div>
+                            <div class="controls__color jsColor" style="background-color:#5AC9FA"></div>
+                            <div class="controls__color jsColor" style="background-color:#0579FF"></div>
+                            <div class="controls__color jsColor" style="background-color:#5856D6"></div>
+                            <div class="controls__color jsColor randomColor"
+                                style="background-image:linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div id="music"></div>
+
+            <div id="quote">
+                <span>명언</span><span>작가</span>
+            </div>
         </div>
         <div id="menuBox">
             <ul class="menu">
-                <li class="bookmark">북마크</li>
-                <li class="google">구글</li>
-                <li class="naver">네이버</li>
-                <li class="yotube">유튜브</li>
-                <li class="palette">팔레트</li>
-                <li class="save">저장</li>
-                <li class="logout">나가기</li>
+                <li class="bookmark"><i class="fa-solid fa-bookmark"></i></li>
+                <li class="google"><a href="https://www.google.com/"></a></li>
+                <li class="naver"><a href="https://www.naver.com"></a></li>
+                <li class="youtube"><a href="https://www.youtube.com/"></a></li>
+                <li class="pen"><i id="jsPen" class="fa-solid fa-paintbrush"></i></li>
+                <li class="todo"><i class="fa-solid fa-list-ul"></i></li>
+                <li class="logout"><i class="fa-solid fa-door-open"></i></li>
             </ul>
         </div>
     </div>
+
+    <section class="login">
+        <h2>What's your Name?</h2>
+        <form class="loginForm">
+            <input required maxlength="7" type="text">
+        </form>
+    </section>
+    <script src="js/background.js"></script>
+    <script src="js/dday.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/quote.js"></script>
+    <script src="js/draw.js"></script>
 </body>
 
 </html>
