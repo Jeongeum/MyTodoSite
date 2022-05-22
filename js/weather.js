@@ -9,9 +9,9 @@ function onGeoOk(position) {
       console.log(data);
       let weatherImg = document.getElementById("weatherImg");
       let Icon = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
-      const weather = document.querySelector(".weather p:nth-child(3)");
-      const temp = document.querySelector(".weather sub:nth-child(4)");
-      const city = document.querySelector(".weather p:nth-child(5)");
+      const weather = document.querySelector(".weather p:nth-child(2)");
+      const temp = document.querySelector(".weather sub:nth-child(3)");
+      const city = document.querySelector(".weather p:nth-child(4)");
 
       city.innerText = data.name;
       weather.innerText = `${data.main.temp}°`;
