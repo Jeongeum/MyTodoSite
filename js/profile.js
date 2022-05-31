@@ -54,11 +54,6 @@ profileBtn.addEventListener("click", () => {
 
 function handleProfileImg() {
   const currentFiles = profileInput.files;
-  if (profileBtn.children.length > 0) {
-    // 프로필 사진이 두개이면 처음 사진을 지운다.
-    localStorage.removeItem(PROFILE_IMG);
-    //profileBtn.children[0].remove();
-  }
 
   if (currentFiles.length === 0) {
     alert("No files currently selected for upload");
@@ -69,7 +64,7 @@ function handleProfileImg() {
         const reader = new FileReader();
         reader.addEventListener("load", () => {
           localStorage.setItem(PROFILE_IMG, reader.result);
-          loadImgUrl(reader.result);
+          img.src = reader.result;
         });
         reader.readAsDataURL(file);
       } else {
@@ -77,10 +72,6 @@ function handleProfileImg() {
       }
     }
   }
-}
-
-function loadImgUrl(DataUrl) {
-  img.src = DataUrl;
 }
 
 function validFileType(file) {
@@ -110,7 +101,7 @@ const savedName = localStorage.getItem(NAME_KEY);
 
 // 저장된 사진이 없으면 기본이미지 나옴
 if (savedImg !== null) {
-  loadImgUrl(savedImg);
+  img.src = savedImg;
 }
 
 // 저장된 이름이 없으면 로그인 화면 나옴
