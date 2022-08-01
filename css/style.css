@@ -20,7 +20,7 @@ body {
     width: 1000px;
     height: 700px;
     display: flex;
-    /* margin: 10px auto; */
+    margin: auto 10px;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -134,14 +134,15 @@ body {
     display: flex;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     margin-bottom: 10px;
     border-radius: 20px;
 }
 
 .info h2 {
     position: absolute;
-    left: 7%;
+    width : 55%;
+    font-size : 25px;
 }
 
 
@@ -427,6 +428,10 @@ display: none;
     color: var(--color-dark-gray)
 }
 
+.item_name {
+    width: 70%;
+    text-align: start;
+}
 
 .item_edit {
     position: absolute;
@@ -554,8 +559,7 @@ display: none;
 }
 /*메뉴 박스*/
 #menuBox {
-    flex: 0.1;
-    margin-left: 25px;
+    margin-left: 20px;
     width: 70px;
     display: flex;
     flex-direction: column;
