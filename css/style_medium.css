@@ -1,0 +1,23 @@
+.container {
+    width: 90%;
+}
+
+.info h2 {
+    position: absolute;
+    width : 55%;
+    font-size : 20px;
+}
+
+.info figure {
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    position: absolute;
+    right: 7%;
+    text-align: center;
+    line-height: 150px;
+    font-size: 25px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
