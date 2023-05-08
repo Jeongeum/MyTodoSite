@@ -2,9 +2,14 @@ import { css, styled } from "styled-components";
 
 export const ClockDiv = styled.div`
   font-weight: bold;
+  border: none;
+  border-radius: 10px;
+
+  text-align: center;
 
   ${({ theme }) => {
     return css`
+      background-color: ${theme.colors.colorMain};
       font-size: ${theme.fontSizes.xl};
 
       & > span {
