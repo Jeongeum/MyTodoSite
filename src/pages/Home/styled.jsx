@@ -10,4 +10,9 @@ export const MiddleWrapper = styled.div`
   gap: 21px;
 `;
 
+export const DivWrapper = styled.div`
+  display: flex;
+  gap: 10px;
+`;
+
 export const LastWrapper = styled.div``;

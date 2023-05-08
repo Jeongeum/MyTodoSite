@@ -1,6 +1,6 @@
 import { css, styled } from "styled-components";
 
-export const CalenderDiv = styled.div`
+export const WeatherDiv = styled.div`
   display: flex;
   flex-direction: column;
   width: 125px;
@@ -13,11 +13,16 @@ export const CalenderDiv = styled.div`
     return css`
       background-color: ${theme.colors.colorMain};
       font-size: ${theme.fontSizes.s};
+
+      & > div {
+        display: flex;
+        gap: 3px;
+      }
     `;
   }}
 `;
 
-export const CalenderDay = styled.span`
+export const Ondo = styled.span`
   ${({ theme }) => {
     return css`
       font-size: ${theme.fontSizes.xl};
