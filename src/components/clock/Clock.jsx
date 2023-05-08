@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { ClockDiv } from "./styled";
 
 export const Clock = () => {
   const [time, setTime] = useState(new Date());
@@ -14,8 +15,8 @@ export const Clock = () => {
     time.getMinutes() < 10 ? `0${time.getMinutes()}` : time.getMinutes();
   const amPm = hour < 12 ? "AM" : "PM";
   return (
-    <div>
+    <ClockDiv>
       {hour < 10 ? `0${hour}` : hour}:{minute} <span>{amPm}</span>
-    </div>
+    </ClockDiv>
   );
 };
