@@ -6,7 +6,7 @@ import { Calender } from "../../components/calender/Calender";
 import { Weather } from "../../components/weather/Weather";
 import { Dday } from "../../components/dday/Dday";
 import { TodoList } from "../../components/todo/TodoList";
-import { HomeWrapper, LastWrapper, MiddleWrapper } from "./styled";
+import { HomeWrapper, LastWrapper, MiddleWrapper, DivWrapper } from "./styled";
 
 const Home = () => {
   return (
@@ -14,10 +14,10 @@ const Home = () => {
       <ToggleMenu />
       <MiddleWrapper>
         <Clock />
-        <div>
+        <DivWrapper>
           <Calender />
           <Weather />
-        </div>
+        </DivWrapper>
         <Dday />
       </MiddleWrapper>
       <LastWrapper>
