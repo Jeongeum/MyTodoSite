@@ -21,7 +21,7 @@ const Home = () => {
         <Dday />
       </MiddleWrapper>
       <LastWrapper>
-        <Input placeholder="구글 검색" />
+        <Input placeholder="명언넣기" />
         <TodoList />
       </LastWrapper>
     </HomeWrapper>

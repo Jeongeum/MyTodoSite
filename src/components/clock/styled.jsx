@@ -6,6 +6,7 @@ export const ClockDiv = styled.div`
   border-radius: 10px;
 
   text-align: center;
+  padding: 18px;
 
   ${({ theme }) => {
     return css`

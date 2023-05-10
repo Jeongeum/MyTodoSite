@@ -2,6 +2,8 @@ import { styled } from "styled-components";
 
 export const HomeWrapper = styled.div`
   display: flex;
+  width: 954px;
+  gap: 35px;
 `;
 export const MiddleWrapper = styled.div`
   width: 260px;
