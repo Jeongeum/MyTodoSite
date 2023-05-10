@@ -15,7 +15,6 @@ export const Weather = () => {
   const getWeather = () => {
     axios.get(url).then((res) => {
       const data = res.data;
-      console.log(data);
       setWeather({
         id: data.weather[0].id,
         main: data.weather[0].main,
