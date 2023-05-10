@@ -4,7 +4,7 @@ import { CalenderDay, CalenderDiv } from "./styled";
 export const Calender = () => {
   const d = new Date();
   const year = d.getFullYear();
-  const month = d.getMonth();
+  const month = d.getMonth() + 1;
   const day = d.getDay();
   const date = d.getDate();
 
