@@ -1,5 +1,5 @@
 import React from "react";
-import { DdayListUl, DdayListWrapper } from "./styled";
+import { DdayListUl, DdayListWrapper, DdayTitle } from "./styled";
 
 export const DdayList = ({ onClickAddDday, data }) => {
   return (
@@ -7,7 +7,10 @@ export const DdayList = ({ onClickAddDday, data }) => {
       <DdayListUl>
         {data.map((item) => (
           <li key={item.id} onClick={onClickAddDday}>
-            {item.title} <span>d-274</span>
+            <DdayTitle>
+              {item.title} <span>{item.date}</span>
+            </DdayTitle>
+            <span>D-{item.difDay}</span>
           </li>
         ))}
       </DdayListUl>

@@ -93,18 +93,74 @@ export const DdayAddWrapper = styled.div`
   border: none;
   border-radius: 10px;
   z-index: 2;
+
+  input {
+    margin: 10px 0 12px 0;
+    padding-bottom: 5px;
+  }
   ${({ theme }) => {
     return css`
       background-color: ${theme.colors.colorWhite};
+      font-weight: 600;
     `;
   }}
 `;
 
+export const DdaySelectDiv = styled.div`
+  margin-top: 10px;
+  font-weight: 400;
+
+  select {
+    border: none;
+    border-radius: 10px;
+    ${({ theme }) => {
+      return css`
+        background-color: ${theme.colors.colorGray};
+      `;
+    }}
+
+    padding: 2px;
+    margin-right: 4px;
+  }
+`;
 export const DdayListWrapper = styled.div`
-  width: 240px;
   padding: 12px 10px;
 `;
 
 export const DdayListUl = styled.ul`
   height: 160px;
+  overflow-y: scroll;
+
+  & > li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 35px;
+  }
+
+  ${({ theme }) => {
+    return css`
+      font-size: ${theme.fontSizes.base};
+
+      & > li > span {
+        color: ${theme.colors.colorBlue};
+        font-weight: 600;
+        width: 50px;
+      }
+    `;
+  }}
+`;
+
+export const DdayTitle = styled.div`
+  display: flex;
+  flex-direction: column;
+  span {
+    ${({ theme }) => {
+      return css`
+        color: ${theme.colors.colorDarkGray};
+        font-size: ${theme.fontSizes.s};
+      `;
+    }}
+  }
 `;
