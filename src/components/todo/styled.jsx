@@ -15,6 +15,7 @@ export const TodoListWrapper = styled.div`
 
 export const TodoListUl = styled.ul`
   height: 350px;
+  overflow-y: scroll;
 `;
 
 export const TodoItemLi = styled.li`
@@ -33,4 +34,23 @@ export const TodoItemLi = styled.li`
       background-color: ${theme.colors.colorWhite};
     `;
   }}
+`;
+
+export const Input = styled.input`
+  width: 460px;
+`;
+
+export const CreateTodoDiv = styled.div`
+  position: relative;
+  width: 560px;
+
+  padding: 15px;
+  input {
+    width: 460px;
+  }
+
+  button {
+    position: absolute;
+    right: 25px;
+  }
 `;

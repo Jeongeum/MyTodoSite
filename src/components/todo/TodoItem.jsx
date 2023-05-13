@@ -13,10 +13,10 @@ export const TodoItem = ({
   const [newText, setNewText] = useState(text);
 
   // 수정
-  const onClickEdit = () => {
+  const onClickEdit = (id) => {
     setTodoData(
       todoData.map((item) =>
-        item.id === id ? { ...todoData, isEdit: !item.isEdit } : item
+        item.id === id ? { ...item, isEdit: !item.isEdit } : item
       )
     );
   };
@@ -32,15 +32,29 @@ export const TodoItem = ({
       setTodoData(
         todoData.map((item) => {
           if (item.id === id) {
-            return { ...item, text: newText, isEdit: false };
+            return { ...item, content: newText, isEdit: false };
           }
+          return todoData;
         })
       );
     }
   };
+
+  // 체크박스 체크
+  const checkToggle = (id) => {
+    setTodoData(
+      todoData.map((todo) => {
+        if (todo.id === id) {
+          return { ...todo, isDone: !done };
+        }
+        return todo;
+      })
+    );
+  };
+
   // 삭제
-  const onClickDelete = () => {
-    console.log("삭제");
+  const onClickDelete = (id) => {
+    setTodoData(todoData.filter((todo) => todo.id !== id));
   };
   return (
     <TodoItemLi key={id}>
@@ -57,7 +71,7 @@ export const TodoItem = ({
           <span>{text}</span>
         )}
       </div>
-      <button onClick={() => onClickEdit(id)}>수정</button>
+      {isEdit ? null : <button onClick={() => onClickEdit(id)}>수정</button>}
       <button onClick={() => onClickDelete(id)}>삭제</button>
     </TodoItemLi>
   );

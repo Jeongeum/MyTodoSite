@@ -9,26 +9,16 @@ export const Todo = () => {
     return localData ? JSON.parse(localData) : [];
   });
   const [inputValue, setInputValue] = useState("");
+  const [hidden, setHidden] = useState(true);
+
+  // hidden 함수
+  const onClickHidden = () => {
+    setHidden(!hidden);
+  };
 
   // input 입력
   const onChangeInput = (e) => {
     setInputValue(e.target.value);
-  };
-
-  // 등록 버튼 클릭
-  const onClickAddTodo = () => {
-    if (inputValue) {
-      setTodoData((prev) => [
-        ...prev,
-        {
-          id: Date.now(),
-          content: inputValue,
-          isEdit: false,
-          isDone: false,
-        },
-      ]);
-      setInputValue("");
-    }
   };
 
   // 등록 후, data 변화가 생길 때 마다 로컬스토리지에 저장
@@ -40,9 +30,12 @@ export const Todo = () => {
     <TodoListWrapper>
       <TodoList todoData={todoData} setTodoData={setTodoData} />
       <CreateTodo
+        setTodoData={setTodoData}
+        hidden={hidden}
+        onClickHidden={onClickHidden}
         inputValue={inputValue}
+        setInputValue={setInputValue}
         onChangeInput={onChangeInput}
-        onClickAddTodo={onClickAddTodo}
       />
     </TodoListWrapper>
   );
