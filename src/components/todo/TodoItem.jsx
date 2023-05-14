@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TodoItemLi } from "./styled";
+import { TodoItemBtn, TodoItemLi } from "./styled";
 
 export const TodoItem = ({
   todoData,
@@ -34,7 +34,7 @@ export const TodoItem = ({
           if (item.id === id) {
             return { ...item, content: newText, isEdit: false };
           }
-          return todoData;
+          return item;
         })
       );
     }
@@ -71,8 +71,10 @@ export const TodoItem = ({
           <span>{text}</span>
         )}
       </div>
-      {isEdit ? null : <button onClick={() => onClickEdit(id)}>수정</button>}
-      <button onClick={() => onClickDelete(id)}>삭제</button>
+      <div>
+        {isEdit ? null : <button onClick={() => onClickEdit(id)}>수정</button>}
+        <button onClick={() => onClickDelete(id)}>삭제</button>
+      </div>
     </TodoItemLi>
   );
 };

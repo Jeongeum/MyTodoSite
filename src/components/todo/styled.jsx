@@ -21,6 +21,7 @@ export const TodoListUl = styled.ul`
 export const TodoItemLi = styled.li`
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   width: 530px;
   padding: 15px 15px 15px 8px;
@@ -36,21 +37,19 @@ export const TodoItemLi = styled.li`
   }}
 `;
 
-export const Input = styled.input`
-  width: 460px;
-`;
-
 export const CreateTodoDiv = styled.div`
   position: relative;
   width: 560px;
+  height: 30px;
+  margin-top: 25px;
 
-  padding: 15px;
   input {
     width: 460px;
   }
 
   button {
     position: absolute;
-    right: 25px;
+    right: 30px;
+    bottom: 5px;
   }
 `;
