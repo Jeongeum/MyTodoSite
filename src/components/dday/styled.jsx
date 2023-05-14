@@ -11,36 +11,12 @@ export const DdayWrapper = styled.div`
       background-color: ${theme.colors.colorMain};
     `;
   }}
-`;
 
-export const AddBtn = styled.button`
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  width: 30px;
-  height: 30px;
-
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 3;
-
-  transition: 0.125s all ease-in;
-
-  ${({ theme }) => {
-    return css`
-      background-color: ${theme.colors.colorGray};
-
-      &:hover {
-        transform: rotate(45deg);
-      }
-
-      &:focus {
-        background-color: ${theme.colors.colorRed};
-        transform: rotate(45deg);
-      }
-    `;
-  }}
+  button {
+    position: absolute;
+    cursor: pointer;
+    z-index: 3;
+  }
 `;
 
 export const SubmitBtn = styled.button`
@@ -61,27 +37,7 @@ export const SubmitBtn = styled.button`
     `;
   }}
 `;
-export const CloseBtn = styled.button`
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  width: 30px;
-  height: 30px;
 
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 3;
-
-  transform: rotate(45deg);
-  transition: 0.125s all ease-in;
-
-  ${({ theme }) => {
-    return css`
-      background-color: ${theme.colors.colorRed};
-    `;
-  }}
-`;
 export const DdayAddWrapper = styled.div`
   position: absolute;
   top: 10px;

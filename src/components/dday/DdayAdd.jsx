@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Input from "../common/Input/Input";
 import { DdayAddWrapper, DdaySelectDiv, SubmitBtn } from "./styled";
+import DeleteButton from "../common/Button/DeleteButton";
 
 const d = new Date();
 const years = [
@@ -112,6 +113,9 @@ export const DdayAdd = ({ data, setData }) => {
           일
         </DdaySelectDiv>
         <SubmitBtn onClick={onClickSubmitDday}>등록</SubmitBtn>
+        <DeleteButton bottom="5px" right="7px">
+          +
+        </DeleteButton>
       </form>
     </DdayAddWrapper>
   );
