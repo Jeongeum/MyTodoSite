@@ -35,7 +35,7 @@ export const CreateTodo = ({
             placeholder="할일 등록"
             value={inputValue}
             onChange={onChangeInput}
-            onKeyDown={(e) => onClickAddTodo(e)}
+            onKeyUp={(e) => onClickAddTodo(e)}
           />
           <DeleteButton onClick={onClickHidden}>+</DeleteButton>
         </>
