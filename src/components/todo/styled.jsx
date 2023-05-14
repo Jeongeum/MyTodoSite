@@ -30,6 +30,13 @@ export const TodoItemLi = styled.li`
   border: none;
   border-radius: 10px;
 
+  & > div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
   ${({ theme }) => {
     return css`
       background-color: ${theme.colors.colorWhite};
@@ -37,6 +44,28 @@ export const TodoItemLi = styled.li`
   }}
 `;
 
+export const TodoItemCheckBtn = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: 1px solid #ababab;
+  border-radius: 50%;
+`;
+
+export const Text = styled.span`
+  color: ${(props) => (props.done === "true" ? "#c4c4c4" : "#000000")};
+`;
+
+export const TodoItemBtn = styled.div`
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+`;
 export const CreateTodoDiv = styled.div`
   position: relative;
   width: 560px;

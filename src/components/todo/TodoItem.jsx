@@ -1,5 +1,9 @@
 import React, { useState } from "react";
-import { TodoItemBtn, TodoItemLi } from "./styled";
+import { Text, TodoItemBtn, TodoItemCheckBtn, TodoItemLi } from "./styled";
+import Img from "../common/Img/Img";
+import EditIcon from "../../assets/images/pencilColor.png";
+import DelteIcon from "../../assets/images/deleteColor.png";
+import CheckIcon from "../../assets/images/check.png";
 
 export const TodoItem = ({
   todoData,
@@ -41,13 +45,14 @@ export const TodoItem = ({
   };
 
   // 체크박스 체크
-  const checkToggle = (id) => {
+  const onClickToggle = (id) => {
+    console.log("click~!");
     setTodoData(
-      todoData.map((todo) => {
-        if (todo.id === id) {
-          return { ...todo, isDone: !done };
+      todoData.map((item) => {
+        if (item.id === id) {
+          return { ...item, isDone: !item.isDone };
         }
-        return todo;
+        return item;
       })
     );
   };
@@ -56,10 +61,13 @@ export const TodoItem = ({
   const onClickDelete = (id) => {
     setTodoData(todoData.filter((todo) => todo.id !== id));
   };
+
   return (
     <TodoItemLi key={id}>
       <div>
-        <input type="checkbox" />
+        <TodoItemCheckBtn onClick={() => onClickToggle(id)}>
+          {done ? <Img src={CheckIcon} width="10px" /> : null}
+        </TodoItemCheckBtn>
         {isEdit ? (
           <input
             type="text"
@@ -68,13 +76,19 @@ export const TodoItem = ({
             value={newText}
           ></input>
         ) : (
-          <span>{text}</span>
+          <Text done={done ? "true" : "false"}>{text}</Text>
         )}
       </div>
-      <div>
-        {isEdit ? null : <button onClick={() => onClickEdit(id)}>수정</button>}
-        <button onClick={() => onClickDelete(id)}>삭제</button>
-      </div>
+      <TodoItemBtn>
+        {isEdit ? null : (
+          <button onClick={() => onClickEdit(id)}>
+            <Img src={EditIcon} width="20px"></Img>
+          </button>
+        )}
+        <button onClick={() => onClickDelete(id)}>
+          <Img src={DelteIcon} width="20px"></Img>
+        </button>
+      </TodoItemBtn>
     </TodoItemLi>
   );
 };

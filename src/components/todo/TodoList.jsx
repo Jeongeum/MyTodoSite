@@ -11,7 +11,7 @@ export const TodoList = ({ todoData, setTodoData }) => {
           todoData={todoData}
           setTodoData={setTodoData}
           text={item.content}
-          done={item.inDone}
+          done={item.isDone}
           isEdit={item.isEdit}
           item={item}
         />
