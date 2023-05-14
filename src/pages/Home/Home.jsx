@@ -5,7 +5,7 @@ import { Clock } from "../../components/clock/Clock";
 import { Calender } from "../../components/calender/Calender";
 import { Weather } from "../../components/weather/Weather";
 import { Dday } from "../../components/dday/Dday";
-import { TodoList } from "../../components/todo/TodoList";
+import { Todo } from "../../components/todo/Todo";
 import { HomeWrapper, LastWrapper, MiddleWrapper, DivWrapper } from "./styled";
 
 const Home = () => {
@@ -22,7 +22,7 @@ const Home = () => {
       </MiddleWrapper>
       <LastWrapper>
         <Input placeholder="명언넣기" />
-        <TodoList />
+        <Todo />
       </LastWrapper>
     </HomeWrapper>
   );
