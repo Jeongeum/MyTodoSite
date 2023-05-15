@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { DdayAdd } from "./DdayAdd";
-import { AddBtn, CloseBtn, DdayWrapper } from "./styled";
+import { DdayWrapper } from "./styled";
 import { DdayList } from "./DdayList";
 import CreateButton from "../common/Button/CreateButton";
-import DeleteButton from "../common/Button/DeleteButton";
 
 export const Dday = () => {
   const [hidden, setHidden] = useState(true);

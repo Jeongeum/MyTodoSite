@@ -3,6 +3,7 @@ import { css, styled } from "styled-components";
 export const WeatherDiv = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 3px;
   width: 125px;
   border: none;
   border-radius: 10px;
@@ -16,6 +17,7 @@ export const WeatherDiv = styled.div`
 
       & > div {
         display: flex;
+        align-items: center;
         gap: 3px;
       }
     `;
