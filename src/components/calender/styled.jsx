@@ -3,6 +3,7 @@ import { css, styled } from "styled-components";
 export const CalenderDiv = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 3px;
   width: 125px;
   border: none;
   border-radius: 10px;
@@ -18,6 +19,7 @@ export const CalenderDiv = styled.div`
 `;
 
 export const CalenderDay = styled.span`
+  margin-top: 4px;
   ${({ theme }) => {
     return css`
       font-size: ${theme.fontSizes.xl};

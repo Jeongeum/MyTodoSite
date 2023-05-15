@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Input from "../common/Input/Input";
 import { CreateTodoDiv } from "./styled";
 import CreateButton from "../common/Button/CreateButton";
