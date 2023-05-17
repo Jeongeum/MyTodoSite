@@ -14,7 +14,11 @@ export const CreateTodo = ({
 }) => {
   // 등록 버튼 클릭
   const onClickAddTodo = (e) => {
-    if (inputValue && e.key === "Enter") {
+    if (
+      inputValue &&
+      e.key === "Enter" &&
+      e.nativeEvent.isComposing === false
+    ) {
       setTodoData((prev) => [
         ...prev,
         {
@@ -35,7 +39,7 @@ export const CreateTodo = ({
             placeholder="할일 등록"
             value={inputValue}
             onChange={onChangeInput}
-            onKeyUp={(e) => onClickAddTodo(e)}
+            onKeyDown={(e) => onClickAddTodo(e)}
           />
           <DeleteButton onClick={onClickHidden}>+</DeleteButton>
         </>
