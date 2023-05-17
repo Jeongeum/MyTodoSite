@@ -88,11 +88,19 @@ export const DdayListUl = styled.ul`
   overflow-y: scroll;
 
   & > li {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     height: 35px;
+  }
+  & > li:hover {
+    #itembox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   ${({ theme }) => {
@@ -119,4 +127,22 @@ export const DdayTitle = styled.div`
       `;
     }}
   }
+`;
+
+export const DdayDeleteBox = styled.div`
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+
+  background-color: rgba(190, 190, 190, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+
+  ${({ theme }) => {
+    return css`
+      color: ${theme.colors.colorRed};
+    `;
+  }}
 `;

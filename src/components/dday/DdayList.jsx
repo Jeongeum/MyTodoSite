@@ -1,17 +1,13 @@
 import React from "react";
-import { DdayListUl, DdayListWrapper, DdayTitle } from "./styled";
+import { DdayListUl, DdayListWrapper } from "./styled";
+import { DdayItem } from "./DdayItem";
 
-export const DdayList = ({ onClickAddDday, data }) => {
+export const DdayList = ({ data, setData }) => {
   return (
     <DdayListWrapper>
       <DdayListUl>
         {data.map((item) => (
-          <li key={item.id} onClick={onClickAddDday}>
-            <DdayTitle>
-              {item.title} <span>{item.date}</span>
-            </DdayTitle>
-            <span>D-{item.difDay}</span>
-          </li>
+          <DdayItem key={item.id} item={item} data={data} setData={setData} />
         ))}
       </DdayListUl>
     </DdayListWrapper>

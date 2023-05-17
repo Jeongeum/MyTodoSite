@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { DdayAdd } from "./DdayAdd";
+import { CreateDday } from "./CreateDday";
 import { DdayWrapper } from "./styled";
 import { DdayList } from "./DdayList";
 import CreateButton from "../common/Button/CreateButton";
@@ -7,13 +7,9 @@ import CreateButton from "../common/Button/CreateButton";
 export const Dday = () => {
   const [hidden, setHidden] = useState(true);
   const [data, setData] = useState([]);
+
   // 등록 화면 보여주는 함수
   const onClickAddDday = () => {
-    setHidden(!hidden);
-  };
-
-  // 디데이 수정 시 li 클릭하면 등록 화면 보여주는 함수
-  const onClickEditDday = () => {
     setHidden(!hidden);
   };
 
@@ -28,11 +24,15 @@ export const Dday = () => {
   return (
     <>
       <DdayWrapper>
-        <DdayList onClickAddDday={onClickAddDday} data={data} />
+        <DdayList data={data} setData={setData} />
 
         {hidden === false ? (
           <>
-            <DdayAdd data={data} setData={setData} />
+            <CreateDday
+              data={data}
+              setData={setData}
+              onClickAddDday={onClickAddDday}
+            />
           </>
         ) : (
           <CreateButton onClick={onClickAddDday} bottom="10px" right="10px">
