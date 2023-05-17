@@ -24,7 +24,7 @@ const day = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
   23, 24, 25, 26, 27, 28, 29, 30, 31,
 ];
-export const DdayAdd = ({ data, setData }) => {
+export const CreateDday = ({ data, setData, onClickAddDday }) => {
   const [ddayName, setDdayName] = useState("");
   const [selectYear, setSelectYear] = useState(years[0]);
   const [selectMonth, setSelectMonth] = useState(month[d.getMonth()]);
@@ -58,7 +58,7 @@ export const DdayAdd = ({ data, setData }) => {
   }, [data]);
   return (
     <DdayAddWrapper>
-      <form>
+      <form onSubmit={onClickSubmitDday}>
         <label>
           기념일 명
           <Input
@@ -112,11 +112,11 @@ export const DdayAdd = ({ data, setData }) => {
           </select>
           일
         </DdaySelectDiv>
-        <SubmitBtn onClick={onClickSubmitDday}>등록</SubmitBtn>
-        <DeleteButton bottom="5px" right="7px">
-          +
-        </DeleteButton>
+        <SubmitBtn>등록</SubmitBtn>
       </form>
+      <DeleteButton onClick={onClickAddDday} bottom="5px" right="7px">
+        +
+      </DeleteButton>
     </DdayAddWrapper>
   );
 };
