@@ -1,6 +1,6 @@
 import { css, styled } from "styled-components";
 
-export const LoginWrapper = styled.div`
+export const SignupWrapper = styled.div`
   width: 500px;
   height: 600px;
   margin: 0 auto;
@@ -11,7 +11,7 @@ export const LoginWrapper = styled.div`
     justify-content: center;
     align-items: center;
 
-    & input:nth-child(4) {
+    & input:nth-child(5) {
       margin-bottom: 10px;
     }
   }
@@ -34,39 +34,16 @@ export const LoginWrapper = styled.div`
   }
 `;
 
-export const LogoInfo = styled.p`
-  margin-bottom: 95px;
-`;
-
-export const ErrorMessage = styled.p`
-  align-self: flex-start;
-
-  ${({ theme }) => {
-    return css`
-      color: ${theme.colors.colorRed};
-    `;
-  }};
-`;
-export const SignupInfo = styled.div`
+export const ErrorMessageWrapper = styled.div`
   width: 390px;
-  display: flex;
-  justify-content: space-between;
   margin-bottom: 50px;
-
-  a {
-    font-weight: 700;
-  }
-
-  ${({ theme }) => {
-    return css`
-      font-size: ${theme.fontSizes.s};
-    `;
-  }};
 `;
-export const LoginBtn = styled.button`
-  width: 170px;
+
+export const SignupBtn = styled.button`
+  width: 150px;
   height: 50px;
 
   border: none;
   border-radius: 10px;
+  margin-right: 10px;
 `;
