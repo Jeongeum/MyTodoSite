@@ -7,18 +7,25 @@ import {
   ProfileEditBtn,
   ProfileWrapper,
 } from "./styled";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase";
 import { UserInfoModal } from "../modal/UserInfoModal";
+import { signOut } from "firebase/auth";
 
 export const Profile = () => {
   const [userObj, setUserObj] = useState("");
   const [modalHidden, setModalHidden] = useState(true);
+  const navigate = useNavigate();
 
-  console.log(auth.currentUser);
+  console.log(userObj);
+
   const onClickModal = () => {
-    console.log("click modal!");
     setModalHidden(!modalHidden); // 모달 숨김 해제
+  };
+
+  const onClickLogout = async () => {
+    await signOut(userObj);
+    navigate("/");
   };
 
   useEffect(() => {
@@ -26,21 +33,22 @@ export const Profile = () => {
       setUserObj(auth.currentUser);
     }, 500);
   }, [userObj]);
+
   return (
     <>
       <ProfileWrapper>
         {userObj && `${userObj.displayName}`} 님
         <Img
           src={
-            userObj.photoURL === null ? `${BasicProfileIcon}` : userObj.photoURL
+            userObj?.photoURL === null
+              ? `${BasicProfileIcon}`
+              : userObj?.photoURL
           }
           width="35px"
         />
         <InfoWrapper id="info">
           <ProfileEditBtn onClick={onClickModal}>회원정보수정</ProfileEditBtn>
-          <Link to="/">
-            <LogoutBtn>로그아웃</LogoutBtn>
-          </Link>
+          <LogoutBtn onClick={onClickLogout}>로그아웃</LogoutBtn>
         </InfoWrapper>
       </ProfileWrapper>
       {modalHidden ? null : (

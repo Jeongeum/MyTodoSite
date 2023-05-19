@@ -78,3 +78,36 @@ export const DeleteButton = styled.button`
     `;
   }}
 `;
+
+// 회원탈퇴 모달
+export const DeleteModal = styled.div`
+  width: 200px;
+  height: 120px;
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  z-index: 8000;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+
+  ul {
+    padding: 15px;
+  }
+
+  li {
+    cursor: pointer;
+    width: 100%;
+  }
+
+  li:hover {
+    ${({ theme }) => {
+      return css`
+        color: ${theme.colors.colorRed};
+      `;
+    }}
+  }
+`;
