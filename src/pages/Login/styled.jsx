@@ -10,6 +10,10 @@ export const LoginWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    & input:nth-child(4) {
+      margin-bottom: 10px;
+    }
   }
 
   img {
@@ -17,8 +21,6 @@ export const LoginWrapper = styled.div`
   }
 
   p {
-    margin-bottom: 95px;
-
     ${({ theme }) => {
       return css`
         font-size: ${theme.fontSizes.s};
@@ -32,6 +34,35 @@ export const LoginWrapper = styled.div`
   }
 `;
 
+export const LogoInfo = styled.p`
+  margin-bottom: 95px;
+`;
+
+export const ErrorMessage = styled.p`
+  align-self: flex-start;
+
+  ${({ theme }) => {
+    return css`
+      color: ${theme.colors.colorRed};
+    `;
+  }};
+`;
+export const SignupInfo = styled.div`
+  width: 390px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+
+  a {
+    font-weight: 700;
+  }
+
+  ${({ theme }) => {
+    return css`
+      font-size: ${theme.fontSizes.s};
+    `;
+  }};
+`;
 export const LoginBtn = styled.button`
   width: 170px;
   height: 50px;
