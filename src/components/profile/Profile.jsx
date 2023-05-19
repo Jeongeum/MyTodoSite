@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Img from "../common/Img/Img";
 import BasicProfileIcon from "../../assets/images/basicProfile.png";
 import {
@@ -8,17 +8,44 @@ import {
   ProfileWrapper,
 } from "./styled";
 import { Link } from "react-router-dom";
+import { auth } from "../../firebase";
+import { UserInfoModal } from "../modal/UserInfoModal";
 
 export const Profile = () => {
+  const [userObj, setUserObj] = useState("");
+  const [modalHidden, setModalHidden] = useState(true);
+
+  console.log(auth.currentUser);
+  const onClickModal = () => {
+    console.log("click modal!");
+    setModalHidden(!modalHidden); // 모달 숨김 해제
+  };
+
+  useEffect(() => {
+    setTimeout(() => {
+      setUserObj(auth.currentUser);
+    }, 500);
+  }, [userObj]);
   return (
-    <ProfileWrapper>
-      춘식이 님 <Img src={BasicProfileIcon} width="35px" />
-      <InfoWrapper id="info">
-        <ProfileEditBtn>회원정보수정</ProfileEditBtn>
-        <Link to="/">
-          <LogoutBtn>로그아웃</LogoutBtn>
-        </Link>
-      </InfoWrapper>
-    </ProfileWrapper>
+    <>
+      <ProfileWrapper>
+        {userObj && `${userObj.displayName}`} 님
+        <Img
+          src={
+            userObj.photoURL === null ? `${BasicProfileIcon}` : userObj.photoURL
+          }
+          width="35px"
+        />
+        <InfoWrapper id="info">
+          <ProfileEditBtn onClick={onClickModal}>회원정보수정</ProfileEditBtn>
+          <Link to="/">
+            <LogoutBtn>로그아웃</LogoutBtn>
+          </Link>
+        </InfoWrapper>
+      </ProfileWrapper>
+      {modalHidden ? null : (
+        <UserInfoModal onClickModal={onClickModal} userObj={userObj} />
+      )}
+    </>
   );
 };
