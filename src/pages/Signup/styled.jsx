@@ -1,6 +1,6 @@
 import { css, styled } from "styled-components";
 
-export const LoginWrapper = styled.div`
+export const SignupWrapper = styled.div`
   width: 500px;
   height: 600px;
   margin: 0 auto;
@@ -10,6 +10,10 @@ export const LoginWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    & input:nth-child(5) {
+      margin-bottom: 10px;
+    }
   }
 
   img {
@@ -17,8 +21,6 @@ export const LoginWrapper = styled.div`
   }
 
   p {
-    margin-bottom: 95px;
-
     ${({ theme }) => {
       return css`
         font-size: ${theme.fontSizes.s};
@@ -32,10 +34,16 @@ export const LoginWrapper = styled.div`
   }
 `;
 
-export const LoginBtn = styled.button`
-  width: 170px;
+export const ErrorMessageWrapper = styled.div`
+  width: 390px;
+  margin-bottom: 50px;
+`;
+
+export const SignupBtn = styled.button`
+  width: 150px;
   height: 50px;
 
   border: none;
   border-radius: 10px;
+  margin-right: 10px;
 `;
