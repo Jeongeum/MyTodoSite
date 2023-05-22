@@ -14,6 +14,7 @@ import {
   AllWrapper,
 } from "./styled";
 import { Profile } from "../../components/profile/Profile";
+import { Search } from "../../components/search/Search";
 
 const Home = () => {
   return (
@@ -30,7 +31,7 @@ const Home = () => {
           <Dday />
         </MiddleWrapper>
         <LastWrapper>
-          <Input placeholder="명언넣기" />
+          <Search />
           <Todo />
         </LastWrapper>
       </HomeWrapper>
