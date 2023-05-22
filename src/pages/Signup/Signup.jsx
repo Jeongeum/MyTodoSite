@@ -44,7 +44,7 @@ export const Signup = () => {
       });
 
       // 회원가입이 완료되면 로그인 화면으로 이동
-      navigate("/login");
+      navigate("/");
     } catch (error) {
       switch (error.code) {
         case "auth/invalid-email":

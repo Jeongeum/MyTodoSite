@@ -15,6 +15,10 @@ export const ProfileWrapper = styled.div`
       align-items: center;
     }
   }
+
+  img {
+    border-radius: 50%;
+  }
 `;
 
 export const InfoWrapper = styled.div`
