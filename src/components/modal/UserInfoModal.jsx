@@ -18,25 +18,25 @@ import { storage } from "../../firebase";
 
 export const UserInfoModal = ({ onClickModal, userObj }) => {
   const [newNickname, setNewNickname] = useState(userObj?.displayName);
-  const fileInput = useRef(null);
+  const inputRef = useRef(null);
   const [hidden, setHidden] = useState(true);
   const [modalhidden, setModalHidden] = useState(true);
   const navigate = useNavigate();
-  const [newPhoto, setNewPhoto] = useState(userObj.photoURL);
+  const [newPhotoURL, setNewPhotoURL] = useState(userObj.photoURL);
 
   // 프로필 사진 수정
   const onClickImgEdit = () => {
     console.log("이미지수정");
-    fileInput.current.click();
+    inputRef.current.click();
   };
 
   // 프로필 사진 수정 반영
   const onChangeImage = async (e) => {
-    let image = fileInput.current.files[0];
+    let image = inputRef.current.files[0];
     const storageRef = ref(storage, `images/${image.name}`);
     uploadBytes(storageRef, image).then((snapshot) => {
       getDownloadURL(storageRef).then(async (url) => {
-        setNewPhoto(url);
+        setNewPhotoURL(url);
         await updateProfile(userObj, {
           photoURL: url,
         });
@@ -86,7 +86,9 @@ export const UserInfoModal = ({ onClickModal, userObj }) => {
             <Img
               width="50px"
               height="50px"
-              src={userObj.photoURL === null ? `${BasicProfileIcon}` : newPhoto}
+              src={
+                userObj.photoURL === null ? `${BasicProfileIcon}` : newPhotoURL
+              }
             />
 
             {hidden ? (
@@ -103,7 +105,7 @@ export const UserInfoModal = ({ onClickModal, userObj }) => {
             <button onClick={onClickImgEdit}>
               <input
                 type="file"
-                ref={fileInput}
+                ref={inputRef}
                 onChange={(e) => onChangeImage(e)}
               />
               프로필 사진 수정
