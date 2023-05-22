@@ -18,7 +18,7 @@ export const Profile = () => {
   const navigate = useNavigate();
 
   const onClickModal = () => {
-    setModalHidden(!modalHidden); // 모달 숨김 해제
+    setModalHidden((prev) => !prev); // 모달 숨김 해제
   };
 
   const onClickLogout = async () => {
@@ -27,21 +27,23 @@ export const Profile = () => {
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      setUserObj(auth.currentUser);
-    }, 500);
-  }, [userObj]);
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setUserObj(user);
+    });
+
+    return () => unsubscribe(); // Cleanup 함수를 사용하여 구독 취소
+  }, []);
+
+  if (!userObj) {
+    return null; // 로그인 상태가 아니라면 null 또는 로딩 화면 반환
+  }
 
   return (
     <>
       <ProfileWrapper>
-        {userObj && `${userObj.displayName}`} 님
+        {userObj.displayName} 님
         <Img
-          src={
-            userObj?.photoURL === null
-              ? `${BasicProfileIcon}`
-              : userObj?.photoURL
-          }
+          src={userObj.photoURL || BasicProfileIcon}
           width="35px"
           height="35px"
         />
@@ -50,7 +52,7 @@ export const Profile = () => {
           <LogoutBtn onClick={onClickLogout}>로그아웃</LogoutBtn>
         </InfoWrapper>
       </ProfileWrapper>
-      {modalHidden ? null : (
+      {!modalHidden && (
         <UserInfoModal onClickModal={onClickModal} userObj={userObj} />
       )}
     </>
