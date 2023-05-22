@@ -7,7 +7,7 @@ import {
   ProfileEditBtn,
   ProfileWrapper,
 } from "./styled";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { auth } from "../../firebase";
 import { UserInfoModal } from "../modal/UserInfoModal";
 import { signOut } from "firebase/auth";
@@ -17,14 +17,12 @@ export const Profile = () => {
   const [modalHidden, setModalHidden] = useState(true);
   const navigate = useNavigate();
 
-  console.log(userObj);
-
   const onClickModal = () => {
     setModalHidden(!modalHidden); // 모달 숨김 해제
   };
 
   const onClickLogout = async () => {
-    await signOut(userObj);
+    await signOut(auth);
     navigate("/");
   };
 
@@ -45,6 +43,7 @@ export const Profile = () => {
               : userObj?.photoURL
           }
           width="35px"
+          height="35px"
         />
         <InfoWrapper id="info">
           <ProfileEditBtn onClick={onClickModal}>회원정보수정</ProfileEditBtn>

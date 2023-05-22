@@ -49,6 +49,10 @@ export const ProfileImgWrapper = styled.div`
   align-items: center;
   gap: 15px;
   margin-bottom: 10px;
+
+  img {
+    border-radius: 50%;
+  }
 `;
 
 export const InfoEditButtonWrapper = styled.div`

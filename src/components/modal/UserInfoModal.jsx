@@ -12,16 +12,17 @@ import Img from "../common/Img/Img";
 import BasicProfileIcon from "../../assets/images/basicProfile.png";
 import Input from "../common/Input/Input";
 import { deleteUser, updateProfile } from "firebase/auth";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { ref, getDownloadURL, uploadBytes } from "firebase/storage";
+import { storage } from "../../firebase";
 
 export const UserInfoModal = ({ onClickModal, userObj }) => {
   const [newNickname, setNewNickname] = useState(userObj?.displayName);
   const fileInput = useRef(null);
-  const [newPhoto, setNewPhoto] = useState(userObj?.photoURL);
-  const [file, setFile] = useState(null);
   const [hidden, setHidden] = useState(true);
   const [modalhidden, setModalHidden] = useState(true);
   const navigate = useNavigate();
+  const [newPhoto, setNewPhoto] = useState(userObj.photoURL);
 
   // 프로필 사진 수정
   const onClickImgEdit = () => {
@@ -31,17 +32,15 @@ export const UserInfoModal = ({ onClickModal, userObj }) => {
 
   // 프로필 사진 수정 반영
   const onChangeImage = async (e) => {
-    setFile(e.target.files[0]);
-
-    const reader = new FileReader();
-    reader.onload = () => {
-      if (reader.readyState === 2) {
-        setNewPhoto(reader.result);
-      }
-    };
-    reader.readAsDataURL(e.target.files[0]);
-    await updateProfile(userObj, {
-      photoURL: newPhoto,
+    let image = fileInput.current.files[0];
+    const storageRef = ref(storage, `images/${image.name}`);
+    uploadBytes(storageRef, image).then((snapshot) => {
+      getDownloadURL(storageRef).then(async (url) => {
+        setNewPhoto(url);
+        await updateProfile(userObj, {
+          photoURL: url,
+        });
+      });
     });
   };
 
@@ -86,6 +85,7 @@ export const UserInfoModal = ({ onClickModal, userObj }) => {
           <ProfileImgWrapper>
             <Img
               width="50px"
+              height="50px"
               src={userObj.photoURL === null ? `${BasicProfileIcon}` : newPhoto}
             />
 
