@@ -29,13 +29,13 @@ export const CreateDday = ({ data, setData, onClickAddDday }) => {
   const [selectYear, setSelectYear] = useState(years[0]);
   const [selectMonth, setSelectMonth] = useState(month[d.getMonth()]);
   const [selectDay, setSelectDay] = useState(day[d.getDate() - 1]);
+  const [currentDate, setCurrentDate] = useState(new Date());
 
   // 기념일 등록
   const onClickSubmitDday = () => {
     if (ddayName) {
       const inputDay = new Date(`${selectYear}-${selectMonth}-${selectDay}`);
-      const toDay = new Date();
-      const difTime = inputDay - toDay;
+      const difTime = inputDay - currentDate;
 
       const difDay = Math.floor(difTime / (1000 * 60 * 60 * 24)) + 1;
       setData((prev) => [
@@ -52,10 +52,22 @@ export const CreateDday = ({ data, setData, onClickAddDday }) => {
     }
   };
 
+  // 매일 자정마다 갱신
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentDate(new Date());
+    }, 1000 * 60 * 60 * 24);
+
+    return () => {
+      clearInterval(timer); // 컴포넌트 언마운트 시 타이머 정리
+    };
+  }, []);
+
   // 등록 후, data 변화가 생길 때 마다 로컬스토리지에 저장
   useEffect(() => {
     localStorage.setItem("DdayData", JSON.stringify(data));
   }, [data]);
+
   return (
     <DdayAddWrapper>
       <form onSubmit={onClickSubmitDday}>
