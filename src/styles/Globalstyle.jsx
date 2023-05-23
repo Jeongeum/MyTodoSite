@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, css } from "styled-components";
 
 const Globalstyle = createGlobalStyle`
 
@@ -38,7 +38,13 @@ footer, header, hgroup, main, menu, nav, section {
 body {
   line-height: 1;
   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  background-color: #F7F7FA;
+
+  ${({ theme }) => {
+    return css`
+      background-color: ${(props) => props.theme.colors.colorBg};
+      color: ${(props) => props.theme.colors.colorMainFont};
+    `;
+  }}
 }
 menu, ol, ul, li {
   list-style: none;

@@ -9,7 +9,7 @@ import MenuOnButton from "../common/Button/MenuOnButton";
 import MenuLinkButton from "../common/Button/MenuLinkButton";
 import { CreateBookMarkModal } from "../modal/CreateBookMarkModal";
 
-const ToggleMenu = () => {
+const ToggleMenu = ({ toggleTheme }) => {
   const [isMenu, setIsMenu] = useState(false);
   const [modalHidden, setModalHidden] = useState(true);
 
@@ -69,9 +69,9 @@ const ToggleMenu = () => {
               </MenuLinkButton>
             </li>
           ))}
-          {/* <MenuButton>
+          <MenuButton onClick={toggleTheme}>
             <Img src={MoonIcon} alt="lightmode" width="25px" />
-          </MenuButton> */}
+          </MenuButton>
         </ul>
       </ToggleMenuWrapper>
       {!modalHidden && (

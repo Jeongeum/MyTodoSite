@@ -1,5 +1,4 @@
 import React from "react";
-import Input from "../../components/common/Input/Input";
 import ToggleMenu from "../../components/toggleMenu/ToggleMenu";
 import { Clock } from "../../components/clock/Clock";
 import { Calender } from "../../components/calender/Calender";
@@ -16,11 +15,11 @@ import {
 import { Profile } from "../../components/profile/Profile";
 import { Search } from "../../components/search/Search";
 
-const Home = () => {
+const Home = ({ toggleTheme }) => {
   return (
     <AllWrapper>
       <HomeWrapper>
-        <ToggleMenu />
+        <ToggleMenu toggleTheme={toggleTheme} />
         <MiddleWrapper>
           <Profile />
           <Clock />
