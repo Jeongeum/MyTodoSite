@@ -23,7 +23,7 @@ export const LoginWrapper = styled.div`
   p {
     ${({ theme }) => {
       return css`
-        font-size: ${theme.fontSizes.s};
+        font-size: ${(props) => props.theme.fontSizes.s};
       `;
     }}
   }
@@ -43,7 +43,7 @@ export const ErrorMessage = styled.p`
 
   ${({ theme }) => {
     return css`
-      color: ${theme.colors.colorRed};
+      color: ${(props) => props.theme.colors.colorRed};
     `;
   }};
 `;
@@ -59,7 +59,7 @@ export const SignupInfo = styled.div`
 
   ${({ theme }) => {
     return css`
-      font-size: ${theme.fontSizes.s};
+      font-size: ${(props) => props.theme.fontSizes.s};
     `;
   }};
 `;

@@ -8,6 +8,12 @@ const MenuButton = styled.button`
   position: absolute;
   transition: 0.5s;
   transform: translate(0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+
   cursor: pointer;
 
   background-color: transparent;

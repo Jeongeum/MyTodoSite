@@ -9,12 +9,12 @@ export const ClockDiv = styled.div`
 
   ${({ theme }) => {
     return css`
-      background-color: ${theme.colors.colorMain};
-      box-shadow: ${theme.colors.colorShadow};
-      font-size: ${theme.fontSizes.xl};
+      background-color: ${(props) => props.theme.colors.colorMain};
+      box-shadow: ${(props) => props.theme.colors.colorShadow};
+      font-size: ${(props) => props.theme.fontSizes.xl};
 
       & > span {
-        font-size: ${theme.fontSizes.l};
+        font-size: ${(props) => props.theme.fontSizes.l};
       }
     `;
   }}

@@ -8,8 +8,8 @@ export const TodoListWrapper = styled.div`
 
   ${({ theme }) => {
     return css`
-      background-color: ${theme.colors.colorMain};
-      box-shadow: ${theme.colors.colorShadow};
+      background-color: ${(props) => props.theme.colors.colorMain};
+      box-shadow: ${(props) => props.theme.colors.colorShadow};
     `;
   }}
 `;
@@ -40,7 +40,7 @@ export const TodoItemLi = styled.li`
 
   ${({ theme }) => {
     return css`
-      background-color: ${theme.colors.colorWhite};
+      background-color: ${(props) => props.theme.colors.colorWhite};
     `;
   }}
 `;

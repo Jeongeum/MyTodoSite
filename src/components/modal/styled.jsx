@@ -28,8 +28,8 @@ export const ModalBox = styled.div`
   padding: 15px;
   ${({ theme }) => {
     return css`
-      background-color: ${theme.colors.colorWhite};
-      box-shadow: ${theme.colors.colorDarkShadow};
+      background-color: ${(props) => props.theme.colors.colorWhite};
+      box-shadow: ${(props) => props.theme.colors.colorDarkShadow};
     `;
   }}
   border-radius: 10px;
@@ -59,7 +59,7 @@ export const ProfileImgWrapper = styled.div`
 export const InfoEditButtonWrapper = styled.div`
   ${({ theme }) => {
     return css`
-      font-size: ${theme.fontSizes.s};
+      font-size: ${(props) => props.theme.fontSizes.s};
     `;
   }}
 
@@ -79,7 +79,7 @@ export const DeleteButton = styled.button`
 
   ${({ theme }) => {
     return css`
-      color: ${theme.colors.colorRed};
+      color: ${(props) => props.theme.colors.colorRed};
     `;
   }}
 `;
@@ -88,7 +88,6 @@ export const DeleteButton = styled.button`
 export const DeleteModal = styled.div`
   width: 200px;
   height: 120px;
-  background-color: #fff;
   border: none;
   border-radius: 10px;
   z-index: 8000;
@@ -98,6 +97,13 @@ export const DeleteModal = styled.div`
   align-items: center;
   text-align: center;
   gap: 20px;
+
+  ${({ theme }) => {
+    return css`
+      background-color: ${(props) => props.theme.colors.colorWhite};
+      box-shadow: ${(props) => props.theme.colors.colorDarkShadow};
+    `;
+  }}
 
   ul {
     padding: 15px;
@@ -111,7 +117,7 @@ export const DeleteModal = styled.div`
   li:hover {
     ${({ theme }) => {
       return css`
-        color: ${theme.colors.colorRed};
+        color: ${(props) => props.theme.colors.colorRed};
       `;
     }}
   }
@@ -140,8 +146,8 @@ export const BookMarkModalBox = styled.div`
 
   ${({ theme }) => {
     return css`
-      background-color: ${theme.colors.colorWhite};
-      box-shadow: ${theme.colors.colorDarkShadow};
+      background-color: ${(props) => props.theme.colors.colorWhite};
+      box-shadow: ${(props) => props.theme.colors.colorDarkShadow};
     `;
   }}
 `;

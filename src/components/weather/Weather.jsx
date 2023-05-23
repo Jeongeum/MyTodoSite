@@ -34,7 +34,7 @@ export const Weather = () => {
   return (
     <WeatherDiv>
       <span>{weather.main}</span>
-      <Ondo>{weather.temperature}</Ondo>
+      <Ondo>{weather.temperature}°</Ondo>
       <div>
         {weather.cityName}
         <Img

@@ -8,8 +8,8 @@ export const DdayWrapper = styled.div`
   border-radius: 10px;
   ${({ theme }) => {
     return css`
-      background-color: ${theme.colors.colorMain};
-      box-shadow: ${theme.colors.colorShadow};
+      background-color: ${(props) => props.theme.colors.colorMain};
+      box-shadow: ${(props) => props.theme.colors.colorShadow};
     `;
   }}
 
@@ -34,7 +34,7 @@ export const SubmitBtn = styled.button`
 
   ${({ theme }) => {
     return css`
-      background-color: ${theme.colors.colorBlue2};
+      background-color: ${(props) => props.theme.colors.colorBlue2};
     `;
   }}
 `;
@@ -57,7 +57,7 @@ export const DdayAddWrapper = styled.div`
   }
   ${({ theme }) => {
     return css`
-      background-color: ${theme.colors.colorWhite};
+      background-color: ${(props) => props.theme.colors.colorWhite};
       font-weight: 600;
     `;
   }}
@@ -72,7 +72,7 @@ export const DdaySelectDiv = styled.div`
     border-radius: 10px;
     ${({ theme }) => {
       return css`
-        background-color: ${theme.colors.colorGray};
+        background-color: ${(props) => props.theme.colors.colorGray};
       `;
     }}
 
@@ -107,10 +107,10 @@ export const DdayListUl = styled.ul`
 
   ${({ theme }) => {
     return css`
-      font-size: ${theme.fontSizes.base};
+      font-size: ${(props) => props.theme.fontSizes.base};
 
       & > li > span {
-        color: ${theme.colors.colorBlue};
+        color: ${(props) => props.theme.colors.colorBlue};
         font-weight: 500;
         width: 50px;
       }
@@ -125,8 +125,8 @@ export const DdayTitle = styled.div`
   span {
     ${({ theme }) => {
       return css`
-        color: ${theme.colors.colorDarkGray};
-        font-size: ${theme.fontSizes.s};
+        color: ${(props) => props.theme.colors.colorDarkGray};
+        font-size: ${(props) => props.theme.fontSizes.s};
       `;
     }}
   }
@@ -145,7 +145,7 @@ export const DdayDeleteBox = styled.div`
 
   ${({ theme }) => {
     return css`
-      color: ${theme.colors.colorRed};
+      color: ${(props) => props.theme.colors.colorRed};
     `;
   }}
 `;

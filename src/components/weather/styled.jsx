@@ -12,9 +12,9 @@ export const WeatherDiv = styled.div`
 
   ${({ theme }) => {
     return css`
-      background-color: ${theme.colors.colorMain};
-      box-shadow: ${theme.colors.colorShadow};
-      font-size: ${theme.fontSizes.s};
+      background-color: ${(props) => props.theme.colors.colorMain};
+      box-shadow: ${(props) => props.theme.colors.colorShadow};
+      font-size: ${(props) => props.theme.fontSizes.s};
 
       & > div {
         display: flex;
@@ -28,7 +28,7 @@ export const WeatherDiv = styled.div`
 export const Ondo = styled.span`
   ${({ theme }) => {
     return css`
-      font-size: ${theme.fontSizes.xl};
+      font-size: ${(props) => props.theme.fontSizes.xl};
     `;
   }}
 `;

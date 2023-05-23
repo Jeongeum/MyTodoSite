@@ -44,7 +44,7 @@ export const LogoutBtn = styled.button`
   &:hover {
     ${({ theme }) => {
       return css`
-        color: ${theme.colors.colorRed};
+        color: ${(props) => props.theme.colors.colorRed};
       `;
     }}
   }
