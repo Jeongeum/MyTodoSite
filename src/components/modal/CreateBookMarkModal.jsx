@@ -1,9 +1,7 @@
 import React from "react";
 import {
   BookMarkModalBox,
-  BookMarkModalWrapper,
   CreateBtn,
-  ModalBox,
   ModalHeader,
   ModalWrapper,
 } from "./styled";
