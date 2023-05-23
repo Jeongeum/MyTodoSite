@@ -25,7 +25,8 @@ const ToggleMenu = () => {
   };
 
   const onClickModal = () => {
-    if (bookmarkCount === 4) {
+    if (bookmarkCount >= 4) {
+      alert("북마크는 최대 4개까지 추가할 수 있습니다.");
       return;
     } else {
       setModalHidden((prev) => !prev);
@@ -43,6 +44,7 @@ const ToggleMenu = () => {
       },
     ]);
     setBookMarkURL("");
+    onClickModal((prev) => !prev);
   };
 
   useEffect(() => {
@@ -57,7 +59,8 @@ const ToggleMenu = () => {
             {`${bookmarkCount} / 4`}
           </MenuOnButton>
           <MenuButton onClick={onClickModal}>
-            <Img src={AddIcon} alt="북마크 추가버튼" width="25px" />
+            <Img src={AddIcon} alt="북마크 추가버튼" width="20px" />
+            북마크 추가
           </MenuButton>
           {bookmarkData.map((item) => (
             <li key={item.id}>
