@@ -18,8 +18,6 @@ export const Weather = () => {
       setWeather({
         id: data.weather[0].id,
         main: data.weather[0].main,
-        tempMax: (data.main.temp_max - 273).toFixed(1),
-        tempMin: (data.main.temp_min - 273).toFixed(1),
         temperature: (data.main.temp - 273).toFixed(1),
         cityName: data.name,
         icon: data.weather[0].icon,
@@ -36,9 +34,6 @@ export const Weather = () => {
   return (
     <WeatherDiv>
       <span>{weather.main}</span>
-      <span>
-        최고:{weather.tempMax} 최저:{weather.tempMin}
-      </span>
       <Ondo>{weather.temperature}</Ondo>
       <div>
         {weather.cityName}

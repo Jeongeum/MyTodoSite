@@ -13,6 +13,7 @@ export const CalenderDiv = styled.div`
   ${({ theme }) => {
     return css`
       background-color: ${theme.colors.colorMain};
+      box-shadow: ${theme.colors.colorShadow};
       font-size: ${theme.fontSizes.s};
     `;
   }}
@@ -23,7 +24,6 @@ export const CalenderDay = styled.span`
   ${({ theme }) => {
     return css`
       font-size: ${theme.fontSizes.xl};
-      font-weight: 700;
     `;
   }}
 `;

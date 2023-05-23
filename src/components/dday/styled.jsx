@@ -9,6 +9,7 @@ export const DdayWrapper = styled.div`
   ${({ theme }) => {
     return css`
       background-color: ${theme.colors.colorMain};
+      box-shadow: ${theme.colors.colorShadow};
     `;
   }}
 
@@ -93,6 +94,7 @@ export const DdayListUl = styled.ul`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 5px;
     height: 35px;
   }
   & > li:hover {
@@ -109,7 +111,7 @@ export const DdayListUl = styled.ul`
 
       & > li > span {
         color: ${theme.colors.colorBlue};
-        font-weight: 600;
+        font-weight: 500;
         width: 50px;
       }
     `;
@@ -119,6 +121,7 @@ export const DdayListUl = styled.ul`
 export const DdayTitle = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 5px;
   span {
     ${({ theme }) => {
       return css`

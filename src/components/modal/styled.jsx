@@ -28,7 +28,8 @@ export const ModalBox = styled.div`
   padding: 15px;
   ${({ theme }) => {
     return css`
-      background-color: ${theme.colors.colorMain};
+      background-color: ${theme.colors.colorWhite};
+      box-shadow: ${theme.colors.colorDarkShadow};
     `;
   }}
   border-radius: 10px;
@@ -74,7 +75,7 @@ export const DeleteButton = styled.button`
   bottom: 15px;
   right: 15px;
 
-  font-weight: 700;
+  font-weight: 600;
 
   ${({ theme }) => {
     return css`
@@ -139,7 +140,8 @@ export const BookMarkModalBox = styled.div`
 
   ${({ theme }) => {
     return css`
-      background-color: ${theme.colors.colorMain};
+      background-color: ${theme.colors.colorWhite};
+      box-shadow: ${theme.colors.colorDarkShadow};
     `;
   }}
 `;

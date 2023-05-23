@@ -1,8 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 
 const Globalstyle = createGlobalStyle`
+
   *, *::before, *::after {
     box-sizing: border-box;
+    
  }
     html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -35,6 +37,8 @@ footer, header, hgroup, main, menu, nav, section {
 }
 body {
   line-height: 1;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  background-color: #F7F7FA;
 }
 menu, ol, ul, li {
   list-style: none;
@@ -63,6 +67,9 @@ input {
   }
 }
  
+button {
+  background-color: transparent;
+}
 
 
 `;

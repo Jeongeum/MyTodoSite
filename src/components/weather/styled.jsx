@@ -13,6 +13,7 @@ export const WeatherDiv = styled.div`
   ${({ theme }) => {
     return css`
       background-color: ${theme.colors.colorMain};
+      box-shadow: ${theme.colors.colorShadow};
       font-size: ${theme.fontSizes.s};
 
       & > div {
@@ -28,7 +29,6 @@ export const Ondo = styled.span`
   ${({ theme }) => {
     return css`
       font-size: ${theme.fontSizes.xl};
-      font-weight: 700;
     `;
   }}
 `;

@@ -3,12 +3,13 @@ import { css, styled } from "styled-components";
 export const TodoListWrapper = styled.div`
   width: 560px;
   height: 430px;
-
+  border-radius: 10px;
   padding: 15px;
 
   ${({ theme }) => {
     return css`
       background-color: ${theme.colors.colorMain};
+      box-shadow: ${theme.colors.colorShadow};
     `;
   }}
 `;
