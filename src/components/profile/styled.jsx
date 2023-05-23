@@ -38,11 +38,7 @@ export const InfoWrapper = styled.div`
   }
 `;
 
-export const ProfileEditBtn = styled.button`
-  &:hover {
-    font-weight: 700;
-  }
-`;
+export const ProfileEditBtn = styled.button``;
 
 export const LogoutBtn = styled.button`
   &:hover {

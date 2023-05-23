@@ -54,7 +54,7 @@ export const SignupInfo = styled.div`
   margin-bottom: 50px;
 
   a {
-    font-weight: 700;
+    font-weight: 600;
   }
 
   ${({ theme }) => {
