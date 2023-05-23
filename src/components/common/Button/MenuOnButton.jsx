@@ -1,14 +1,19 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const MenuOnButton = styled.button`
   width: 55px;
   height: 55px;
-  background-color: #efefef;
   border: none;
   border-radius: 50px;
   position: absolute;
   transform: translate(0);
   cursor: pointer;
+
+  ${({ theme }) => {
+    return css`
+      background-color: ${theme.colors.colorWhite};
+    `;
+  }}
 `;
 
 export default MenuOnButton;

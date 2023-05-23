@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const ToggleMenuWrapper = styled.div`
+  position: relative;
   width: 55px;
   height: 55px;
   display: flex;
@@ -8,29 +9,41 @@ const ToggleMenuWrapper = styled.div`
   gap: 25px;
   transition: 0.5s;
 
-  & > :first-child {
+  li {
+    transition: 0.5s;
+    transform: translate(0);
+  }
+  & > ul > :first-child {
     z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   &.active {
-    > :nth-child(2) {
+    & > ul > :nth-child(2) {
       transform: translateY(80px);
     }
 
-    > :nth-child(3) {
+    & > ul > :nth-child(3) {
       transform: translateY(160px);
     }
 
-    > :nth-child(4) {
+    & > ul > :nth-child(4) {
       transform: translateY(240px);
     }
 
-    > :nth-child(5) {
+    & > ul > :nth-child(5) {
       transform: translateY(320px);
     }
 
-    > :last-child {
+    & > ul > :nth-child(6) {
       transform: translateY(400px);
+    }
+    & > ul > :nth-child(7) {
+      transform: translateY(480px);
     }
   }
 `;

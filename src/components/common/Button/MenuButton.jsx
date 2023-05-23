@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 const MenuButton = styled.button`
   width: 55px;
@@ -10,11 +10,7 @@ const MenuButton = styled.button`
   transform: translate(0);
   cursor: pointer;
 
-  ${({ theme }) => {
-    return css`
-      background-color: ${theme.colors.colorMain};
-    `;
-  }}
+  background-color: transparent;
 `;
 
 export default MenuButton;

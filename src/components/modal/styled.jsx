@@ -115,3 +115,38 @@ export const DeleteModal = styled.div`
     }}
   }
 `;
+
+// 북마크 추가 모달
+
+export const BookMarkModalBox = styled.div`
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 300px;
+  height: 200px;
+  padding: 15px;
+  border-radius: 10px;
+  z-index: 5000;
+
+  label {
+    font-weight: 600;
+  }
+
+  input {
+    margin-top: 7px;
+  }
+
+  ${({ theme }) => {
+    return css`
+      background-color: ${theme.colors.colorMain};
+    `;
+  }}
+`;
+
+export const CreateBtn = styled.button`
+  width: 90px;
+  height: 35px;
+  align-self: center;
+  background-color: pink;
+`;
