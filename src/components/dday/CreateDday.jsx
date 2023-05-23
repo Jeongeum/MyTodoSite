@@ -32,100 +32,122 @@ export const CreateDday = ({ data, setData, onClickAddDday }) => {
   const [currentDate, setCurrentDate] = useState(new Date());
 
   // 기념일 등록
-  const onClickSubmitDday = () => {
+  const onClickSubmitDday = (e) => {
+    e.preventDefault();
     if (ddayName) {
       const inputDay = new Date(`${selectYear}-${selectMonth}-${selectDay}`);
       const difTime = inputDay - currentDate;
 
       const difDay = Math.floor(difTime / (1000 * 60 * 60 * 24)) + 1;
-      setData((prev) => [
-        ...prev,
+      const newData = [
+        ...data,
         {
           id: Date.now(),
           title: ddayName,
           date: `${selectYear}-${selectMonth}-${selectDay}`,
           difDay: difDay,
         },
-      ]);
+      ];
+
+      setData(newData);
 
       setDdayName("");
+      onClickAddDday();
+
+      localStorage.setItem("DdayData", JSON.stringify(newData));
     }
   };
 
-  // 매일 자정마다 갱신
+  // 매일 자정마다 difDay 갱신
   useEffect(() => {
+    const updateDifDay = () => {
+      const inputDay = new Date(`${selectYear}-${selectMonth}-${selectDay}`);
+      const difTime = inputDay - currentDate;
+      const difDay = Math.floor(difTime / (1000 * 60 * 60 * 24)) + 1;
+
+      // data 배열의 해당 디데이 항목을 업데이트
+      setData((prev) =>
+        prev.map((item) =>
+          item.id === data.id ? { ...item, difDay: difDay } : item
+        )
+      );
+    };
+
     const timer = setInterval(() => {
       setCurrentDate(new Date());
     }, 1000 * 60 * 60 * 24);
 
+    updateDifDay(); // 초기 렌더링 시 difDay를 업데이트
+
     return () => {
-      clearInterval(timer); // 컴포넌트 언마운트 시 타이머 정리
+      clearInterval(timer);
     };
-  }, []);
+  }, [selectYear, selectMonth, selectDay]);
 
   // 등록 후, data 변화가 생길 때 마다 로컬스토리지에 저장
   useEffect(() => {
+    console.log(data);
     localStorage.setItem("DdayData", JSON.stringify(data));
   }, [data]);
 
   return (
     <DdayAddWrapper>
-      <form onSubmit={onClickSubmitDday}>
-        <label>
-          기념일 명
-          <Input
-            type="text"
-            placeholder="기념일을 입력하세요"
-            maxLength={15}
-            onChange={(e) => {
-              setDdayName(e.target.value);
-            }}
-          />
-        </label>
-        날짜
-        <DdaySelectDiv>
-          <select
-            onChange={(e) => {
-              setSelectYear(Number(e.target.value));
-            }}
-            defaultValue={selectYear}
-          >
-            {years.map((item) => (
-              <option value={item} key={item}>
-                {item}
-              </option>
-            ))}
-          </select>
-          년
-          <select
-            onChange={(e) => {
-              setSelectMonth(Number(e.target.value));
-            }}
-            defaultValue={selectMonth}
-          >
-            {month.map((item) => (
-              <option value={item} key={item}>
-                {item}
-              </option>
-            ))}
-          </select>
-          월
-          <select
-            onChange={(e) => {
-              setSelectDay(Number(e.target.value));
-            }}
-            defaultValue={selectDay}
-          >
-            {day.map((item) => (
-              <option value={item} key={item}>
-                {item}
-              </option>
-            ))}
-          </select>
-          일
-        </DdaySelectDiv>
-        <SubmitBtn>등록</SubmitBtn>
-      </form>
+      <label>
+        기념일 명
+        <Input
+          type="text"
+          placeholder="기념일을 입력하세요"
+          maxLength={15}
+          onChange={(e) => {
+            setDdayName(e.target.value);
+          }}
+        />
+      </label>
+      날짜
+      <DdaySelectDiv>
+        <select
+          onChange={(e) => {
+            setSelectYear(Number(e.target.value));
+          }}
+          defaultValue={selectYear}
+        >
+          {years.map((item) => (
+            <option value={item} key={item}>
+              {item}
+            </option>
+          ))}
+        </select>
+        년
+        <select
+          onChange={(e) => {
+            setSelectMonth(Number(e.target.value));
+          }}
+          defaultValue={selectMonth}
+        >
+          {month.map((item) => (
+            <option value={item} key={item}>
+              {item}
+            </option>
+          ))}
+        </select>
+        월
+        <select
+          onChange={(e) => {
+            setSelectDay(Number(e.target.value));
+          }}
+          defaultValue={selectDay}
+        >
+          {day.map((item) => (
+            <option value={item} key={item}>
+              {item}
+            </option>
+          ))}
+        </select>
+        일
+      </DdaySelectDiv>
+      <SubmitBtn type="submit" onClick={(e) => onClickSubmitDday(e)}>
+        등록
+      </SubmitBtn>
       <DeleteButton onClick={onClickAddDday} bottom="5px" right="7px">
         +
       </DeleteButton>
