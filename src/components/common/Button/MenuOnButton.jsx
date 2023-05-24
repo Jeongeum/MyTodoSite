@@ -11,6 +11,7 @@ const MenuOnButton = styled.button`
 
   ${({ theme }) => {
     return css`
+      color: ${(props) => props.theme.colors.colorMainFont};
       background-color: ${(props) => props.theme.colors.colorBg};
     `;
   }}

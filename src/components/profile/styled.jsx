@@ -38,7 +38,13 @@ export const InfoWrapper = styled.div`
   }
 `;
 
-export const ProfileEditBtn = styled.button``;
+export const ProfileEditBtn = styled.button`
+  ${({ theme }) => {
+    return css`
+      color: ${(props) => props.theme.colors.colorMainFont};
+    `;
+  }}
+`;
 
 export const LogoutBtn = styled.button`
   &:hover {

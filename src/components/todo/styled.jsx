@@ -75,6 +75,11 @@ export const CreateTodoDiv = styled.div`
 
   input {
     width: 460px;
+    ${({ theme }) => {
+      return css`
+        border-bottom: 1px solid ${(props) => props.theme.colors.colorMainFont};
+      `;
+    }}
   }
 
   button {

@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { css, styled } from "styled-components";
 
 export const SearchWrapper = styled.div`
   display: flex;
@@ -10,6 +10,12 @@ export const SearchWrapper = styled.div`
     width: 490px;
     height: 35px;
     margin-right: 30px;
+
+    ${({ theme }) => {
+      return css`
+        border-bottom: 1px solid ${(props) => props.theme.colors.colorMainFont};
+      `;
+    }}
   }
 
   button {

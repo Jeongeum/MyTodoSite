@@ -31,12 +31,6 @@ export const SubmitBtn = styled.button`
   border-radius: 15px;
   cursor: pointer;
   z-index: 3;
-
-  ${({ theme }) => {
-    return css`
-      background-color: ${(props) => props.theme.colors.colorBlue2};
-    `;
-  }}
 `;
 
 export const DdayAddWrapper = styled.div`
@@ -50,6 +44,7 @@ export const DdayAddWrapper = styled.div`
   border: none;
   border-radius: 10px;
   z-index: 2;
+  color: #000000;
 
   input {
     margin: 10px 0 12px 0;
