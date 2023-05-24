@@ -26,12 +26,14 @@ export const ModalBox = styled.div`
   width: 300px;
   height: 300px;
   padding: 15px;
+
   ${({ theme }) => {
     return css`
-      background-color: ${theme.colors.colorWhite};
-      box-shadow: ${theme.colors.colorDarkShadow};
+      background-color: ${(props) => props.theme.colors.colorWhite};
+      box-shadow: ${(props) => props.theme.colors.colorDarkShadow};
     `;
   }}
+  color: #000000;
   border-radius: 10px;
   z-index: 5000;
 `;
@@ -59,7 +61,7 @@ export const ProfileImgWrapper = styled.div`
 export const InfoEditButtonWrapper = styled.div`
   ${({ theme }) => {
     return css`
-      font-size: ${theme.fontSizes.s};
+      font-size: ${(props) => props.theme.fontSizes.s};
     `;
   }}
 
@@ -79,7 +81,7 @@ export const DeleteButton = styled.button`
 
   ${({ theme }) => {
     return css`
-      color: ${theme.colors.colorRed};
+      color: ${(props) => props.theme.colors.colorRed};
     `;
   }}
 `;
@@ -88,7 +90,6 @@ export const DeleteButton = styled.button`
 export const DeleteModal = styled.div`
   width: 200px;
   height: 120px;
-  background-color: #fff;
   border: none;
   border-radius: 10px;
   z-index: 8000;
@@ -98,6 +99,14 @@ export const DeleteModal = styled.div`
   align-items: center;
   text-align: center;
   gap: 20px;
+  color: #000000;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+
+  ${({ theme }) => {
+    return css`
+      background-color: ${(props) => props.theme.colors.colorWhite};
+    `;
+  }}
 
   ul {
     padding: 15px;
@@ -111,7 +120,7 @@ export const DeleteModal = styled.div`
   li:hover {
     ${({ theme }) => {
       return css`
-        color: ${theme.colors.colorRed};
+        color: ${(props) => props.theme.colors.colorRed};
       `;
     }}
   }
@@ -129,6 +138,8 @@ export const BookMarkModalBox = styled.div`
   padding: 15px;
   border-radius: 10px;
   z-index: 5000;
+  color: #000000;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
 
   label {
     font-weight: 600;
@@ -140,8 +151,7 @@ export const BookMarkModalBox = styled.div`
 
   ${({ theme }) => {
     return css`
-      background-color: ${theme.colors.colorWhite};
-      box-shadow: ${theme.colors.colorDarkShadow};
+      background-color: ${(props) => props.theme.colors.colorWhite};
     `;
   }}
 `;
@@ -150,5 +160,4 @@ export const CreateBtn = styled.button`
   width: 90px;
   height: 35px;
   align-self: center;
-  background-color: pink;
 `;

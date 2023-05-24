@@ -15,11 +15,6 @@ const ToggleMenuWrapper = styled.div`
   }
   & > ul > :first-child {
     z-index: 10;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
   }
 
   &.active {

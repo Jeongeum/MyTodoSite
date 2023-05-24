@@ -23,7 +23,7 @@ export const SignupWrapper = styled.div`
   p {
     ${({ theme }) => {
       return css`
-        font-size: ${theme.fontSizes.s};
+        font-size: ${(props) => props.theme.fontSizes.s};
       `;
     }}
   }

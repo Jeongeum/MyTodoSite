@@ -19,7 +19,7 @@ const CreateButton = styled.button`
 
   ${({ theme }) => {
     return css`
-      background-color: ${theme.colors.colorGray};
+      background-color: ${(props) => props.theme.colors.colorGray};
     `;
   }}
 `;

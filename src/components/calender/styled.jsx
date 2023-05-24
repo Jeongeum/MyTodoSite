@@ -12,9 +12,9 @@ export const CalenderDiv = styled.div`
 
   ${({ theme }) => {
     return css`
-      background-color: ${theme.colors.colorMain};
-      box-shadow: ${theme.colors.colorShadow};
-      font-size: ${theme.fontSizes.s};
+      background-color: ${(props) => props.theme.colors.colorMain};
+      box-shadow: ${(props) => props.theme.colors.colorShadow};
+      font-size: ${(props) => props.theme.fontSizes.s};
     `;
   }}
 `;
@@ -23,7 +23,7 @@ export const CalenderDay = styled.span`
   margin-top: 4px;
   ${({ theme }) => {
     return css`
-      font-size: ${theme.fontSizes.xl};
+      font-size: ${(props) => props.theme.fontSizes.xl};
     `;
   }}
 `;

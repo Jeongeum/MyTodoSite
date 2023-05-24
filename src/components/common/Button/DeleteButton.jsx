@@ -14,10 +14,10 @@ const DeleteButton = styled.button`
 
   ${({ theme }) => {
     return css`
-      background-color: ${theme.colors.colorRed};
+      background-color: ${(props) => props.theme.colors.colorRed};
 
       &:hover {
-        background-color: ${theme.colors.colorDiRed};
+        background-color: ${(props) => props.theme.colors.colorDiRed};
       }
     `;
   }};
