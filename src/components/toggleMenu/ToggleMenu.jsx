@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import MenuButton from "../common/Button/MenuButton";
 import Img from "../common/Img/Img";
 import BookMarkIcon from "../../assets/images/bookmark.png";
-import AddIcon from "../../assets/images/plus.png";
-import MoonIcon from "../../assets/images/moon.png";
+import AddIcon from "../../assets/images/addButton.png";
+import AddDarkIcon from "../../assets/images/addDarkButton.png";
 import ToggleMenuWrapper from "./styled";
 import MenuOnButton from "../common/Button/MenuOnButton";
 import MenuLinkButton from "../common/Button/MenuLinkButton";
 import { CreateBookMarkModal } from "../modal/CreateBookMarkModal";
 
-const ToggleMenu = ({ toggleTheme }) => {
+const ToggleMenu = ({ themeMode }) => {
   const [isMenu, setIsMenu] = useState(false);
   const [modalHidden, setModalHidden] = useState(true);
 
@@ -56,11 +56,14 @@ const ToggleMenu = ({ toggleTheme }) => {
         <ul>
           <MenuOnButton onClick={onClickMenuHandler}>
             <Img src={BookMarkIcon} alt="북마크 펼치기 버튼" width="25px" />
-            {`${bookmarkCount} / 4`}
           </MenuOnButton>
           <MenuButton onClick={onClickModal}>
-            <Img src={AddIcon} alt="북마크 추가버튼" width="20px" />
-            북마크 추가
+            <Img
+              src={themeMode === "lightTheme" ? AddIcon : AddDarkIcon}
+              alt="북마크 추가버튼"
+              width="20px"
+            />
+            {`${bookmarkCount} / 4`}
           </MenuButton>
           {bookmarkData.map((item) => (
             <li key={item.id}>
@@ -69,9 +72,6 @@ const ToggleMenu = ({ toggleTheme }) => {
               </MenuLinkButton>
             </li>
           ))}
-          <MenuButton onClick={toggleTheme}>
-            <Img src={MoonIcon} alt="lightmode" width="25px" />
-          </MenuButton>
         </ul>
       </ToggleMenuWrapper>
       {!modalHidden && (
