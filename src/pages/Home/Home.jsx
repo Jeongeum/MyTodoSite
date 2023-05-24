@@ -14,12 +14,14 @@ import {
 } from "./styled";
 import { Profile } from "../../components/profile/Profile";
 import { Search } from "../../components/search/Search";
+import { ThemeModeButton } from "../../components/toggleThemeMode/ThemeModeButton";
 
-const Home = ({ toggleTheme }) => {
+const Home = ({ toggleTheme, themeMode }) => {
   return (
     <AllWrapper>
+      <ThemeModeButton toggleTheme={toggleTheme} themeMode={themeMode} />
       <HomeWrapper>
-        <ToggleMenu toggleTheme={toggleTheme} />
+        <ToggleMenu themeMode={themeMode} />
         <MiddleWrapper>
           <Profile />
           <Clock />
@@ -30,7 +32,7 @@ const Home = ({ toggleTheme }) => {
           <Dday />
         </MiddleWrapper>
         <LastWrapper>
-          <Search />
+          <Search themeMode={themeMode} />
           <Todo />
         </LastWrapper>
       </HomeWrapper>
