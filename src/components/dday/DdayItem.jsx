@@ -2,16 +2,26 @@ import React from "react";
 import { DdayDeleteBox, DdayTitle } from "./styled";
 
 export const DdayItem = ({ item, data, setData }) => {
-  const { id, title, date, difDay } = item;
+  const { id, title, date, difDay, time } = item;
 
   // 디데이 삭제
   const onClickDeleteDay = (id) => {
-    setData(data.filter((todo) => todo.id !== id));
+    const updatedData = data.filter((item) => item.id !== id);
+
+    // 데이터 갱신 후 로컬스토리지에 다시 저장
+    setData(updatedData);
+    localStorage.setItem("DdayData", JSON.stringify(updatedData));
   };
+
+  // console.log("item:", item.title, "/", "difDay:", difDay);
+
   return (
     <li key={id}>
       <DdayTitle>
-        {title} <span>{date}</span>
+        {title}
+        <span>
+          {date} {time} 남음
+        </span>
       </DdayTitle>
       <span>
         D{difDay >= 0 ? "-" : "+"}
