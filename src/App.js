@@ -36,11 +36,11 @@ function App() {
         <Globalstyle />
         <Routes>
           <Route
-            path="/MyTodoSite/home"
+            path="/home"
             element={<Home toggleTheme={toggleTheme} themeMode={themeMode} />}
           />
-          <Route path="/MyTodoSite/signup" element={<Signup />} />
-          <Route path="/MyTodoSite" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/" element={<Login />} />
         </Routes>
       </ThemeProvider>
     </>
