@@ -31,6 +31,13 @@ export const LoginWrapper = styled.div`
     width: 390px;
     height: 40px;
     margin-bottom: 40px;
+
+    ${({ theme }) => {
+      return css`
+        border-bottom: 1px solid ${(props) => props.theme.colors.colorMainFont};
+        color: ${(props) => props.theme.colors.colorMainFont};
+      `;
+    }}
   }
 `;
 
@@ -69,4 +76,11 @@ export const LoginBtn = styled.button`
 
   border: none;
   border-radius: 10px;
+
+  ${({ theme }) => {
+    return css`
+      background-color: ${(props) => props.theme.colors.colorMain};
+      color: ${(props) => props.theme.colors.colorMainFont};
+    `;
+  }}
 `;

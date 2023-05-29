@@ -53,7 +53,11 @@ menu, ol, ul, li {
 
 a {
   text-decoration: none;
-  color: #000000;
+  ${({ theme }) => {
+    return css`
+      color: ${(props) => props.theme.colors.colorMainFont};
+    `;
+  }}
 }
 blockquote, q {
   quotes: none;
