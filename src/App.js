@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import { Login } from "./pages/Login/Login";
 import Globalstyle from "./styles/Globalstyle";
@@ -31,19 +31,17 @@ function App() {
     }
   };
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <ThemeProvider theme={theme}>
-        <Globalstyle />
-        <Routes>
-          <Route exact path="/" element={<Login />} />
-          <Route
-            path="/home"
-            element={<Home toggleTheme={toggleTheme} themeMode={themeMode} />}
-          />
-          <Route path="/signup" element={<Signup />} />
-        </Routes>
-      </ThemeProvider>
-    </BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <Globalstyle />
+      <Routes>
+        <Route exact path="/" element={<Login />} />
+        <Route
+          path="/home"
+          element={<Home toggleTheme={toggleTheme} themeMode={themeMode} />}
+        />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+    </ThemeProvider>
   );
 }
 export default App;
