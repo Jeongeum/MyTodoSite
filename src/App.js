@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import { Login } from "./pages/Login/Login";
 import Globalstyle from "./styles/Globalstyle";
@@ -31,7 +31,7 @@ function App() {
     }
   };
   return (
-    <>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <ThemeProvider theme={theme}>
         <Globalstyle />
         <Routes>
@@ -43,7 +43,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
         </Routes>
       </ThemeProvider>
-    </>
+    </BrowserRouter>
   );
 }
 export default App;
