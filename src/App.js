@@ -35,12 +35,12 @@ function App() {
       <ThemeProvider theme={theme}>
         <Globalstyle />
         <Routes>
+          <Route exact path="/" element={<Login />} />
           <Route
             path="/home"
             element={<Home toggleTheme={toggleTheme} themeMode={themeMode} />}
           />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/" element={<Login />} />
         </Routes>
       </ThemeProvider>
     </>
