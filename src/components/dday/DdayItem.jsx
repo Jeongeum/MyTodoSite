@@ -13,8 +13,6 @@ export const DdayItem = ({ item, data, setData }) => {
     localStorage.setItem("DdayData", JSON.stringify(updatedData));
   };
 
-  // console.log("item:", item.title, "/", "difDay:", difDay);
-
   return (
     <li key={id}>
       <DdayTitle>

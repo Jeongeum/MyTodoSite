@@ -50,7 +50,6 @@ export const TodoItem = ({
 
   // 체크박스 체크
   const onClickToggle = (id) => {
-    console.log("click~!");
     setTodoData(
       todoData.map((item) => {
         if (item.id === id) {

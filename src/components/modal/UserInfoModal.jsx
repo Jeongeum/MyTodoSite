@@ -26,7 +26,6 @@ export const UserInfoModal = ({ onClickModal, userObj }) => {
 
   // 프로필 사진 수정
   const onClickImgEdit = () => {
-    console.log("이미지수정");
     inputRef.current.click();
   };
 
@@ -72,7 +71,7 @@ export const UserInfoModal = ({ onClickModal, userObj }) => {
   const onClickDelete = async () => {
     await deleteUser(userObj);
     alert("회원정보가 삭제되었습니다!");
-    navigate("/MyTodoSite");
+    navigate("/");
   };
 
   return (

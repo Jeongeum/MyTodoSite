@@ -23,7 +23,7 @@ export const Profile = () => {
 
   const onClickLogout = async () => {
     await signOut(auth);
-    navigate("/MyTodoSite");
+    navigate("/");
   };
 
   useEffect(() => {
