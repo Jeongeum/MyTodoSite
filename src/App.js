@@ -3,7 +3,7 @@ import Home from "./pages/Home/Home";
 import { Login } from "./pages/Login/Login";
 import Globalstyle from "./styles/Globalstyle";
 import { Signup } from "./pages/Signup/Signup";
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./styles/theme";
 
