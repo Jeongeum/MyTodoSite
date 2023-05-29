@@ -45,6 +45,7 @@ export const Login = () => {
           break;
         case "auth/user-not-found" && "auth/wrong-password":
           setErrorMsg("이메일과 비밀번호가 일치하지 않습니다.");
+          break;
         default:
       }
     }

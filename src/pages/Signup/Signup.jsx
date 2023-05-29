@@ -55,6 +55,7 @@ export const Signup = () => {
           break;
         case "auth/weak-password":
           setErrorMsg("비밀번호를 6자리 이상 입력해주세요.");
+          break;
         default:
       }
     }

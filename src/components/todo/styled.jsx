@@ -78,6 +78,7 @@ export const CreateTodoDiv = styled.div`
     ${({ theme }) => {
       return css`
         border-bottom: 1px solid ${(props) => props.theme.colors.colorMainFont};
+        color: ${(props) => props.theme.colors.colorMainFont};
       `;
     }}
   }
