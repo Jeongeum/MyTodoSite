@@ -12,7 +12,16 @@ function App() {
   const [themeMode, setThemeMode] = useState(localThemeMode);
   const theme = themeMode === "lightTheme" ? lightTheme : darkTheme;
 
-  const toggleTheme = useCallback(() => {
+  // const toggleTheme = useCallback(() => {
+  //   if (themeMode === "lightTheme") {
+  //     setThemeMode("darkTheme");
+  //     window.localStorage.setItem("theme", "darkTheme");
+  //   } else {
+  //     setThemeMode("lightTheme");
+  //     window.localStorage.setItem("theme", "lightTheme");
+  //   }
+  // });
+  const toggleTheme = () => {
     if (themeMode === "lightTheme") {
       setThemeMode("darkTheme");
       window.localStorage.setItem("theme", "darkTheme");
@@ -20,7 +29,7 @@ function App() {
       setThemeMode("lightTheme");
       window.localStorage.setItem("theme", "lightTheme");
     }
-  });
+  };
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -31,7 +40,7 @@ function App() {
             element={<Home toggleTheme={toggleTheme} themeMode={themeMode} />}
           />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/" element={<Login />} />
+          <Route path="/MyTodoSite" element={<Login />} />
         </Routes>
       </ThemeProvider>
     </>
