@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/MyTodoSite/static/js/main.eb39229b.js",
+    "main.js": "/MyTodoSite/static/js/main.f9691388.js",
     "static/media/addDarkButton.png": "/MyTodoSite/static/media/addDarkButton.eb7411688b2aaf176413.png",
     "static/media/deleteColor.png": "/MyTodoSite/static/media/deleteColor.2ea64819798628d55782.png",
     "static/media/basicProfile.png": "/MyTodoSite/static/media/basicProfile.8d49e377c7c342895ec2.png",
@@ -10,9 +10,9 @@
     "static/media/addButton.png": "/MyTodoSite/static/media/addButton.97a95254ba57c94e0f80.png",
     "static/media/pencilColor.png": "/MyTodoSite/static/media/pencilColor.ffd17fa1e3ae27a5ae28.png",
     "index.html": "/MyTodoSite/index.html",
-    "main.eb39229b.js.map": "/MyTodoSite/static/js/main.eb39229b.js.map"
+    "main.f9691388.js.map": "/MyTodoSite/static/js/main.f9691388.js.map"
   },
   "entrypoints": [
-    "static/js/main.eb39229b.js"
+    "static/js/main.f9691388.js"
   ]
 }
