@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "https://jeongeum.github.io/MyTodoSite/static/js/main.569cf94a.js",
-    "static/media/addDarkButton.png": "https://jeongeum.github.io/MyTodoSite/static/media/addDarkButton.eb7411688b2aaf176413.png",
-    "static/media/deleteColor.png": "https://jeongeum.github.io/MyTodoSite/static/media/deleteColor.2ea64819798628d55782.png",
-    "static/media/basicProfile.png": "https://jeongeum.github.io/MyTodoSite/static/media/basicProfile.8d49e377c7c342895ec2.png",
-    "static/media/searchDarkmode.png": "https://jeongeum.github.io/MyTodoSite/static/media/searchDarkmode.e372e735fabfa5c85985.png",
-    "static/media/delete.png": "https://jeongeum.github.io/MyTodoSite/static/media/delete.0ad8fcd891afe18906f6.png",
-    "static/media/search.png": "https://jeongeum.github.io/MyTodoSite/static/media/search.1d92f967297920015306.png",
-    "static/media/addButton.png": "https://jeongeum.github.io/MyTodoSite/static/media/addButton.97a95254ba57c94e0f80.png",
-    "static/media/pencilColor.png": "https://jeongeum.github.io/MyTodoSite/static/media/pencilColor.ffd17fa1e3ae27a5ae28.png",
-    "index.html": "https://jeongeum.github.io/MyTodoSite/index.html",
-    "main.569cf94a.js.map": "https://jeongeum.github.io/MyTodoSite/static/js/main.569cf94a.js.map"
+    "main.js": "/MyTodoSite/static/js/main.5ec20301.js",
+    "static/media/addDarkButton.png": "/MyTodoSite/static/media/addDarkButton.eb7411688b2aaf176413.png",
+    "static/media/deleteColor.png": "/MyTodoSite/static/media/deleteColor.2ea64819798628d55782.png",
+    "static/media/basicProfile.png": "/MyTodoSite/static/media/basicProfile.8d49e377c7c342895ec2.png",
+    "static/media/searchDarkmode.png": "/MyTodoSite/static/media/searchDarkmode.e372e735fabfa5c85985.png",
+    "static/media/delete.png": "/MyTodoSite/static/media/delete.0ad8fcd891afe18906f6.png",
+    "static/media/search.png": "/MyTodoSite/static/media/search.1d92f967297920015306.png",
+    "static/media/addButton.png": "/MyTodoSite/static/media/addButton.97a95254ba57c94e0f80.png",
+    "static/media/pencilColor.png": "/MyTodoSite/static/media/pencilColor.ffd17fa1e3ae27a5ae28.png",
+    "index.html": "/MyTodoSite/index.html",
+    "main.5ec20301.js.map": "/MyTodoSite/static/js/main.5ec20301.js.map"
   },
   "entrypoints": [
-    "static/js/main.569cf94a.js"
+    "static/js/main.5ec20301.js"
   ]
 }
