@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# 나만의 브라우저 사이트 | 마투사
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+브라우저의 첫 페이지에는 자주 방문하는 사이트와 검색 창이 존재합니다.
 
-## Available Scripts
+하루에도 몇 번씩 마주치는 브라우저의 첫 페이지에서 오늘 일정과 기념일 등을 관리할 수 있다면 하루를 관리하는 데에 좀 더 편리하지 않을까요?
 
-In the project directory, you can run:
+## 📅 기간
 
-### `npm start`
+1차 : 2023.05.08~2023.05.26
+2차 : 2023.05.29~2023.05.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 사용자 계정
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+📧 Email : matosa@test.com
 
-### `npm test`
+🔒 Password : qwer1234!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[🔗 배포 페이지](https://jeongeum.github.io/MyTodoSite/)
 
-### `npm run build`
+[🎨 Figma 링크](https://www.figma.com/file/yr9QstdL0i4CmLJukI4U9O/My-Todo-Site_React?type=design&node-id=0%3A1&t=LLbWh4Hp6V5Im8d7-1)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 👩🏻‍💻 개발 환경
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+React, Styled-Components, Firebase
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 기능
 
-### `npm run eject`
+| 회원가입 | 로그인 | 회원정보 수정 및 로그아웃 |
+| -------- | ------ | ------------------------- |
+| .        | .      | .                         |
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+| 북마크 추가 | 기념일 추가 | 기념일 삭제 |
+| ----------- | ----------- | ----------- |
+| .           | .           | .           |
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| 할 일 등록 | 할 일 수정 | 할 일 삭제 |
+| ---------- | ---------- | ---------- |
+| .          | .          | .          |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+| 검색 | 다크모드 | 시계, 달력, 날씨 |
+| ---- | -------- | ---------------- |
+| .    | .        | .                |
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 트러블 슈팅
