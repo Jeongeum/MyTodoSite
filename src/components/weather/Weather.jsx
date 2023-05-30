@@ -40,7 +40,8 @@ export const Weather = () => {
         <Img
           src={`http://openweathermap.org/img/w/${weather.icon}.png`}
           alt={weather.iconDescription}
-          width={20}
+          width="20px"
+          height="20px"
         />
       </div>
     </WeatherDiv>

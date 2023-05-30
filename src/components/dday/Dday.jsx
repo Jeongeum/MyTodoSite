@@ -47,11 +47,6 @@ export const Dday = () => {
 
     const diffTime = inputDay - currentDate;
     const diffDay = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    console.log("inputDate: ", inputDate);
-    console.log("inputDate: ", inputDay);
-    console.log("currentDate: ", currentDate);
-    console.log("diffTime:  ", diffTime);
-    console.log("diffDay: ", diffDay);
     return diffDay;
   };
 

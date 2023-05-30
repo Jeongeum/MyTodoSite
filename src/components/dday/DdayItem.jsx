@@ -2,7 +2,7 @@ import React from "react";
 import { DdayDeleteBox, DdayTitle } from "./styled";
 
 export const DdayItem = ({ item, data, setData }) => {
-  const { id, title, date, difDay, time } = item;
+  const { id, title, date, difDay } = item;
 
   // 디데이 삭제
   const onClickDeleteDay = (id) => {
@@ -13,15 +13,11 @@ export const DdayItem = ({ item, data, setData }) => {
     localStorage.setItem("DdayData", JSON.stringify(updatedData));
   };
 
-  // console.log("item:", item.title, "/", "difDay:", difDay);
-
   return (
     <li key={id}>
       <DdayTitle>
         {title}
-        <span>
-          {date} {time} 남음
-        </span>
+        <span>{date}</span>
       </DdayTitle>
       <span>
         D{difDay >= 0 ? "-" : "+"}

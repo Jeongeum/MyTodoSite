@@ -44,7 +44,7 @@ export const Signup = () => {
       });
 
       // 회원가입이 완료되면 로그인 화면으로 이동
-      navigate("/MyTodoSite");
+      navigate("/");
     } catch (error) {
       switch (error.code) {
         case "auth/invalid-email":
@@ -64,7 +64,7 @@ export const Signup = () => {
   return (
     <SignupWrapper>
       <form onSubmit={onSubmitLoginInfo}>
-        <Img src={LogoIcon} width="178px" height="65px" />
+        <Img src={LogoIcon} width="178px" height="65px" alt="로고 아이콘" />
         <LogoInfo>내 브라우저에서 관리하는 오늘의 일정</LogoInfo>
         <Input
           type="email"
