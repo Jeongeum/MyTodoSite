@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import MenuButton from "../common/Button/MenuButton";
 import Img from "../common/Img/Img";
 import BookMarkIcon from "../../assets/images/bookmark.png";
@@ -18,20 +18,20 @@ const ToggleMenu = ({ themeMode }) => {
     const localData = localStorage.getItem("bookmarkList");
     return localData ? JSON.parse(localData) : [];
   });
-  const bookmarkCount = bookmarkData.length;
+  const bookmarkCount = useMemo(() => bookmarkData.length, [bookmarkData]);
 
-  const onClickMenuHandler = () => {
+  const onClickMenuHandler = useCallback(() => {
     setIsMenu((prev) => !prev);
-  };
+  }, []);
 
-  const onClickModal = () => {
+  const onClickModal = useCallback(() => {
     if (bookmarkCount >= 4) {
       alert("북마크는 최대 4개까지 추가할 수 있습니다.");
       return;
     } else {
       setModalHidden((prev) => !prev);
     }
-  };
+  }, [bookmarkCount]);
 
   // 북마크 추가
   const onclickCreateBookMark = () => {

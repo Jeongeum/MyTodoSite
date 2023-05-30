@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { CreateDday } from "./CreateDday";
 import { DdayWrapper } from "./styled";
 import { DdayList } from "./DdayList";
@@ -17,9 +17,9 @@ export const Dday = () => {
   const [inputDate, setInputDate] = useState("");
 
   // 등록 화면 보여주는 함수
-  const onClickAddDday = () => {
-    setHidden(!hidden);
-  };
+  const onClickAddDday = useCallback(() => {
+    setHidden((prev) => !prev);
+  }, []);
 
   // 매일 자정마다 difDay 갱신
   useEffect(() => {
