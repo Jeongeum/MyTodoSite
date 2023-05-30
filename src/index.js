@@ -7,7 +7,7 @@ import { BrowserRouter, HashRouter } from "react-router-dom";
 const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(
-  <HashRouter>
+  <BrowserRouter basename="/MyTodoSite">
     <App />
-  </HashRouter>
+  </BrowserRouter>
 );
