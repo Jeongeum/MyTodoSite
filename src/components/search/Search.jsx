@@ -20,11 +20,17 @@ export const Search = ({ themeMode }) => {
 
   return (
     <SearchWrapper>
-      <Input value={searchText} onChange={(e) => onChangeText(e)} />
+      <Input
+        type="search"
+        value={searchText}
+        onChange={(e) => onChangeText(e)}
+      />
       <button onClick={onClickSearch}>
         <Img
           src={themeMode === "lightTheme" ? SearchIcon : SearchDarkIcon}
           width="20px"
+          height="20px"
+          alt="검색 버튼"
         />
       </button>
     </SearchWrapper>

@@ -64,7 +64,7 @@ export const Signup = () => {
   return (
     <SignupWrapper>
       <form onSubmit={onSubmitLoginInfo}>
-        <Img src={LogoIcon} width="178px" height="65px" />
+        <Img src={LogoIcon} width="178px" height="65px" alt="로고 아이콘" />
         <LogoInfo>내 브라우저에서 관리하는 오늘의 일정</LogoInfo>
         <Input
           type="email"

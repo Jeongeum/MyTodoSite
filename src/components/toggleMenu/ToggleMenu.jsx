@@ -55,20 +55,31 @@ const ToggleMenu = ({ themeMode }) => {
       <ToggleMenuWrapper className={isMenu && "active"}>
         <ul>
           <MenuOnButton onClick={onClickMenuHandler}>
-            <Img src={BookMarkIcon} alt="북마크 펼치기 버튼" width="25px" />
+            <Img
+              src={BookMarkIcon}
+              alt="북마크 펼치기 버튼"
+              width="25px"
+              height="25px"
+            />
           </MenuOnButton>
           <MenuButton onClick={onClickModal}>
             <Img
               src={themeMode === "lightTheme" ? AddIcon : AddDarkIcon}
               alt="북마크 추가버튼"
               width="20px"
+              height="20px"
             />
             {`${bookmarkCount} / 4`}
           </MenuButton>
           {bookmarkData.map((item) => (
             <li key={item.id}>
               <MenuLinkButton href={item.pageURL} target="_blank">
-                <Img src={item.faviconURL} alt="google" width="25px" />
+                <Img
+                  src={item.faviconURL}
+                  alt={bookmarkURL}
+                  width="25px"
+                  height="25px"
+                />
               </MenuLinkButton>
             </li>
           ))}

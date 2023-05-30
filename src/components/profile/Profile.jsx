@@ -46,6 +46,7 @@ export const Profile = () => {
           src={userObj.photoURL || BasicProfileIcon}
           width="35px"
           height="35px"
+          alt="사용자 프로필 사진"
         />
         <InfoWrapper id="info">
           <ProfileEditBtn onClick={onClickModal}>회원정보수정</ProfileEditBtn>

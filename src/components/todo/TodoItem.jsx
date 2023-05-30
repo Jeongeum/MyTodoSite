@@ -6,6 +6,7 @@ import DeleteIcon from "../../assets/images/delete.png";
 import EditColorIcon from "../../assets/images/pencilColor.png";
 import DeleteColorIcon from "../../assets/images/deleteColor.png";
 import CheckIcon from "../../assets/images/check.png";
+import Input from "../common/Input/Input";
 
 export const TodoItem = ({
   todoData,
@@ -69,15 +70,22 @@ export const TodoItem = ({
     <TodoItemLi key={id}>
       <div>
         <TodoItemCheckBtn onClick={() => onClickToggle(id)}>
-          {done ? <Img src={CheckIcon} width="10px" /> : null}
+          {done ? (
+            <Img
+              src={CheckIcon}
+              width="10px"
+              height="10px"
+              alt="할 일 완료 체크버튼"
+            />
+          ) : null}
         </TodoItemCheckBtn>
         {isEdit ? (
-          <input
+          <Input
             type="text"
             onKeyDown={(e) => onEnterEditData(e, id)}
             onChange={(e) => onChangeEditInput(e)}
             value={newText}
-          ></input>
+          ></Input>
         ) : (
           <Text done={done ? "true" : "false"}>{text}</Text>
         )}
@@ -93,6 +101,8 @@ export const TodoItem = ({
               id="editicon"
               src={editHover ? EditColorIcon : EditIcon}
               width="20px"
+              height="20px"
+              alt="할 일 수정버튼"
             ></Img>
           </button>
         )}
@@ -105,6 +115,8 @@ export const TodoItem = ({
             id="deleteicon"
             src={deleteHover ? DeleteColorIcon : DeleteIcon}
             width="20px"
+            height="20px"
+            alt="할 일 삭제버튼"
           ></Img>
         </button>
       </TodoItemBtn>
