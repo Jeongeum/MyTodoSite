@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { TodoListWrapper } from "./styled";
 import { TodoList } from "./TodoList";
 import { CreateTodo } from "./CreateTodo";
@@ -16,9 +16,9 @@ export const Todo = () => {
   const [hidden, setHidden] = useState(true);
 
   // hidden 함수
-  const onClickHidden = () => {
-    setHidden(!hidden);
-  };
+  const onClickHidden = useCallback(() => {
+    setHidden((prev) => !prev);
+  }, []);
 
   // input 입력
   const onChangeInput = (e) => {
