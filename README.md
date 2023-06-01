@@ -1,10 +1,7 @@
 # 나만의 브라우저 사이트 | 마투사
-[🔗 배포 페이지](https://jeongeum.github.io/MyTodoSite/)
+[🔗 배포 페이지](https://jeongeum.github.io/MyTodoSite/) | 
 [🎨 Figma 링크](https://www.figma.com/file/yr9QstdL0i4CmLJukI4U9O/My-Todo-Site_React?type=design&node-id=0%3A1&t=LLbWh4Hp6V5Im8d7-1)
 
-브라우저의 첫 페이지에는 자주 방문하는 사이트와 검색 창이 존재합니다.
-
-하루에도 몇 번씩 마주치는 브라우저의 첫 페이지에서 오늘 일정과 기념일 등을 관리할 수 있다면 하루를 관리하는 데에 좀 더 편리하지 않을까요?
 
 ![image](https://github.com/Jeongeum/MyTodoSite/assets/77143425/f3a458c6-3373-408f-9bc5-16a79abe7f81)
 
@@ -12,8 +9,12 @@
 ## 📅 기간
 
 1차 : 2023.05.08 ~ 2023.05.26
+ - Figma를 이용해 디자인
+ - 기존 JavaScript 버전의 프로젝트를 React로 리팩토링 진행
 
 2차 : 2023.05.29 ~ 진행중
+ - 1차 배포 후 아쉬웠던 점 개선 예정 (모바일 버전, 검색엔진 선택, 계정 별 데이터 관리)
+ - Google Extensions를 적용시켜 서비스 확장 예정
 
 **사용자 계정**
 
@@ -24,9 +25,10 @@
 
 ## 👩🏻‍💻 개발 환경
 
-React, Styled-Components, Firebase
+React, styled-components, Firebase
+<br><br>
 
-## 기능
+## ⚙️ 기능
 <div style="text-align=center">
   
 | 회원가입 | 로그인 | 회원정보 수정 및 로그아웃 |
