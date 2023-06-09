@@ -1,40 +1,43 @@
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { auth } from "../../firebase";
 import { SignupWrapper, ErrorMessageWrapper, SignupBtn } from "./styled";
-import { ErrorMessage, LogoInfo } from "../Login/styled";
-import Img from "../../components/common/Img/Img";
-import LogoIcon from "../../assets/images/logo.png";
+import { ErrorMessage } from "../Login/styled";
+
 import Input from "../../components/common/Input/Input";
 
-export const Signup = () => {
-  const [nickname, setNickname] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+export const Signup = ({
+  nickname,
+  setNickname,
+  email,
+  setEmail,
+  password,
+  setPassword,
+  setNext,
+}) => {
   const [errorMsg, setErrorMsg] = useState("");
-  const navigate = useNavigate();
 
   const onChangeNickname = (e) => {
     setNickname(e.target.value);
-  };
-
-  const onChangeEmail = (e) => {
-    setEmail(e.target.value);
   };
 
   const onChangePassword = (e) => {
     setPassword(e.target.value);
   };
 
-  // 회원가입 및 로그인 함수
-  const onSubmitLoginInfo = async (e) => {
+  // 회원가입 함수
+  const onSubmit = async (e) => {
+    console.log("클릭");
     e.preventDefault();
+    setEmail(`${nickname}@matosa.com`);
+
+    // 회원가입이 완료되면 검색엔진 셋팅 화면 출력되도록 상태값 변경
+    setNext((prev) => !prev);
     try {
       // Firebase에 회원가입 정보를 등록
       const createdUser = await createUserWithEmailAndPassword(
         auth,
-        email,
+        `${nickname}@matosa.com`,
         password
       );
 
@@ -42,9 +45,6 @@ export const Signup = () => {
       await updateProfile(createdUser.user, {
         displayName: nickname,
       });
-
-      // 회원가입이 완료되면 로그인 화면으로 이동
-      navigate("/");
     } catch (error) {
       switch (error.code) {
         case "auth/invalid-email":
@@ -63,15 +63,13 @@ export const Signup = () => {
 
   return (
     <SignupWrapper>
-      <form onSubmit={onSubmitLoginInfo}>
-        <Img src={LogoIcon} width="178px" height="65px" alt="로고 아이콘" />
-        <LogoInfo>내 브라우저에서 관리하는 오늘의 일정</LogoInfo>
-        <Input
+      <form onSubmit={onSubmit}>
+        {/* <Input
           type="email"
           placeholder="📧 이메일을 입력해주세요"
           value={email}
           onChange={(e) => onChangeEmail(e)}
-        />
+        /> */}
         <Input
           type="text"
           placeholder="👤 닉네임을 입력해주세요"
@@ -87,8 +85,8 @@ export const Signup = () => {
         <ErrorMessageWrapper>
           {errorMsg && <ErrorMessage>{errorMsg}</ErrorMessage>}
         </ErrorMessageWrapper>
-        <SignupBtn type="submit" disabled={!email || !nickname || !password}>
-          회원가입
+        <SignupBtn type="submit" disabled={!nickname || !password}>
+          다음
         </SignupBtn>
       </form>
     </SignupWrapper>

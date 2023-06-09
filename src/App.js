@@ -6,6 +6,7 @@ import { Signup } from "./pages/Signup/Signup";
 import { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./styles/theme";
+import { Setting } from "./pages/Settings/Setting";
 
 function App() {
   const localThemeMode = window.localStorage.getItem("theme" || "lightTheme");
@@ -30,11 +31,14 @@ function App() {
       window.localStorage.setItem("theme", "lightTheme");
     }
   };
+
+  // 파이어베이스 데이터가져오기
+
   return (
     <ThemeProvider theme={theme}>
       <Globalstyle />
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Setting />} />
         <Route
           path="/home"
           element={<Home toggleTheme={toggleTheme} themeMode={themeMode} />}

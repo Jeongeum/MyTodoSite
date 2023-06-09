@@ -1,10 +1,6 @@
 import { css, styled } from "styled-components";
 
 export const SignupWrapper = styled.div`
-  width: 500px;
-  height: 600px;
-  margin: 0 auto;
-
   form {
     display: flex;
     flex-direction: column;
