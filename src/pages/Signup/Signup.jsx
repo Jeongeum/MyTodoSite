@@ -29,10 +29,7 @@ export const Signup = ({
   const onSubmit = async (e) => {
     console.log("클릭");
     e.preventDefault();
-    setEmail(`${nickname}@matosa.com`);
 
-    // 회원가입이 완료되면 검색엔진 셋팅 화면 출력되도록 상태값 변경
-    setNext((prev) => !prev);
     try {
       // Firebase에 회원가입 정보를 등록
       const createdUser = await createUserWithEmailAndPassword(
@@ -45,6 +42,10 @@ export const Signup = ({
       await updateProfile(createdUser.user, {
         displayName: nickname,
       });
+      setEmail(`${nickname}@matosa.com`);
+
+      // 회원가입이 완료되면 검색엔진 셋팅 화면 출력되도록 상태값 변경
+      setNext((prev) => !prev);
     } catch (error) {
       switch (error.code) {
         case "auth/invalid-email":
