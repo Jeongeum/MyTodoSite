@@ -10,27 +10,48 @@ export const SettingWrapper = styled.div`
   justify-content: center;
   align-items: center;
 
-  img {
+  & > img {
     margin: 125px 161px 5px 161px;
-  }
-
-  p {
-    ${({ theme }) => {
-      return css`
-        font-size: ${(props) => props.theme.fontSizes.s};
-      `;
-    }}
   }
 `;
 
-export const SignupDiv = styled.div`
+export const LogoInfo = styled.p`
+  margin-bottom: 95px;
+
+  ${({ theme }) => {
+    return css`
+      font-size: ${(props) => props.theme.fontSizes.s};
+    `;
+  }}
+`;
+
+export const SettingInfoMessage = styled.p`
   text-align: center;
-  p {
-    ${({ theme }) => {
-      return css`
-        font-size: ${(props) => props.theme.fontSizes.l};
-        margin-bottom: 10px;
-      `;
-    }}
-  }
+  margin-bottom: 30px;
+
+  ${({ theme }) => {
+    return css`
+      font-size: ${(props) => props.theme.fontSizes.l};
+    `;
+  }}
+`;
+
+export const SettingBtn = styled.button`
+  width: 150px;
+  height: 50px;
+
+  border: none;
+  border-radius: 10px;
+  margin-top: 50px;
+
+  ${({ theme }) => {
+    return css`
+      &:disabled {
+        color: ${(props) => props.theme.colors.colorDisabled};
+      }
+      background-color: ${(props) => props.theme.colors.colorMain};
+      color: ${(props) => props.theme.colors.colorMainFont};
+      box-shadow: ${(props) => props.theme.colors.colorShadow};
+    `;
+  }}
 `;
