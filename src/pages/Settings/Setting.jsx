@@ -26,6 +26,13 @@ export const Setting = () => {
       // 로컬스토리지에 닉네임 저장하여 로그인 유지
       localStorage.setItem("username", nickname);
 
+      // Cloud Firestore에 사용자 정보 및 검색엔진 저장
+      await setDoc(doc(db, "users", email), {
+        email: email,
+        nickname: nickname,
+        password: password,
+        engine: selectedEngine,
+      });
       // 로그인 처리가 완료되면 홈 페이지로 이동
       navigate("/home");
     } catch (error) {
