@@ -1,10 +1,10 @@
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import React, { useState } from "react";
 import { auth } from "../../firebase";
-import { SignupWrapper, ErrorMessageWrapper, SignupBtn } from "./styled";
-import { ErrorMessage } from "../Login/styled";
+import { SignupWrapper, ErrorMessage } from "./styled";
 
 import Input from "../../components/common/Input/Input";
+import { SettingBtn, SettingInfoMessage } from "../Settings/styled";
 
 export const Signup = ({
   nickname,
@@ -26,8 +26,7 @@ export const Signup = ({
   };
 
   // 회원가입 함수
-  const onSubmit = async (e) => {
-    console.log("클릭");
+  const onSignup = async (e) => {
     e.preventDefault();
 
     try {
@@ -64,13 +63,8 @@ export const Signup = ({
 
   return (
     <SignupWrapper>
-      <form onSubmit={onSubmit}>
-        {/* <Input
-          type="email"
-          placeholder="📧 이메일을 입력해주세요"
-          value={email}
-          onChange={(e) => onChangeEmail(e)}
-        /> */}
+      <SettingInfoMessage>사용자 정보를 입력해주세요. 1/2</SettingInfoMessage>
+      <form onSubmit={onSignup}>
         <Input
           type="text"
           placeholder="👤 닉네임을 입력해주세요"
@@ -83,12 +77,10 @@ export const Signup = ({
           onChange={(e) => onChangePassword(e)}
           value={password}
         />
-        <ErrorMessageWrapper>
-          {errorMsg && <ErrorMessage>{errorMsg}</ErrorMessage>}
-        </ErrorMessageWrapper>
-        <SignupBtn type="submit" disabled={!nickname || !password}>
+        {errorMsg && <ErrorMessage>{errorMsg}</ErrorMessage>}
+        <SettingBtn type="submit" disabled={!nickname || !password}>
           다음
-        </SignupBtn>
+        </SettingBtn>
       </form>
     </SignupWrapper>
   );
