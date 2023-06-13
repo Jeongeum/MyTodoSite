@@ -5,8 +5,25 @@ import Img from "../common/Img/Img";
 import SearchIcon from "../../assets/images/search.png";
 import SearchDarkIcon from "../../assets/images/searchDarkmode.png";
 
-export const Search = ({ themeMode }) => {
-  const queryUrl = "https://www.google.com/search?q=";
+export const Search = ({ themeMode, engine }) => {
+  let queryURL = "";
+  switch (engine) {
+    case "google":
+      queryURL = `https://www.${engine}.com/search?q=`;
+      break;
+    case "naver":
+      queryURL = `https://search.${engine}.com/search.${engine}?query=`;
+      break;
+    case "daum":
+      queryURL = `https://search.${engine}.net/search?q=`;
+      break;
+    case "nate":
+      queryURL = `https://search.daum.net/${engine}?q=`;
+      break;
+
+    default:
+      break;
+  }
   const [searchText, setSearchText] = useState("");
 
   const onChangeText = (e) => {
@@ -14,7 +31,7 @@ export const Search = ({ themeMode }) => {
   };
 
   const onClickSearch = () => {
-    window.open(queryUrl + searchText, "_blank");
+    window.open(queryURL + searchText, "_blank");
     setSearchText("");
   };
 
